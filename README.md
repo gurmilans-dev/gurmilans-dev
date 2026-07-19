@@ -6,7 +6,7 @@ I work mainly with C#/.NET, React, Node.js, SQL, REST APIs, authentication, auto
 
 ## Featured Projects
 
-### Opssemble Lite
+### Opssemble
 AI-assisted event operations platform for multi-user event planning, area coordination, task tracking, exception management, readiness scoring, reporting, and scoped QR-based staff access.
 
 **Tech:** React , Vite, Material UI, Fastify, MySQL, JWT, Google OAuth 2.0.
