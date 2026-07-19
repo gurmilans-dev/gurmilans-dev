@@ -9,7 +9,7 @@ I work mainly with C#/.NET, React, Node.js, SQL, REST APIs, authentication, auto
 ### Opssemble Lite
 AI-assisted event operations platform for multi-user event planning, area coordination, task tracking, exception management, readiness scoring, reporting, and scoped QR-based staff access.
 
-**Tech:** React 18, Vite, Material UI, Fastify, MySQL, JWT, Google OAuth 2.0, RBAC, Ollama, Groq LLM API, QR codes.
+**Tech:** React , Vite, Material UI, Fastify, MySQL, JWT, Google OAuth 2.0.
 
 ### Gurmat Saanj
 Full-stack web application for real-time Punjabi speech recognition, Shabad search, projector display, mobile remote control, QR-code session access, and real-time synchronisation.
