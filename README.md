@@ -31,7 +31,7 @@ JavaFX desktop application for agent-based epidemic simulation with configurable
 
 ## Currently
 
-- Building Opssemble Lite as a substantial full-stack portfolio project
+- Building Opssemble as a substantial full-stack portfolio project
 - Improving my portfolio website and public GitHub repositories
 
 ## Links
