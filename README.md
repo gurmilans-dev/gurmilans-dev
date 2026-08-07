@@ -1,198 +1,246 @@
-Gurmilan Singh
+<div align="center">
 
-Software Engineer · Computer Engineering
+# Gurmilan Singh
 
-I build software that has to survive contact with real users.
+**Software Engineer · Computer Engineering**
+
+**I build software that has to survive contact with real users.**
 
 Full-stack systems around workflows, permissions, state, relational data, operational constraints, reliability and deployment.
 
-Portfolio · LinkedIn · Email
+[Portfolio](https://gurmilansingh.com) · [LinkedIn](https://www.linkedin.com/in/gurmilan-singh-017b28284) · [Email](mailto:gurmilans01@gmail.com)
 
-I am most interested in the point where application code meets operational reality: authorization, state transitions, concurrent users, relational data, unreliable dependencies, existing infrastructure and maintainability after deployment.
+</div>
 
-Engineering focus
+---
 
-product systems
+## What I build
+
+I am most interested in software where the interface is only one part of the problem.
+
+```text
+product workflow
       │
       ▼
-applications / workflow UX
+ application
       │
       ▼
-backend / domain logic
+ domain logic
       │
       ▼
 relational data
       │
       ▼
-operations / deployment
+  operations
       │
       ▼
-real users
+  real users
+```
 
+That usually means thinking about authorization, state transitions, concurrent users, transactions, failure paths, deployment and what happens after the software leaves a development machine.
+
+```text
 frontend       React · JavaFX
 backend        Fastify · Node.js · ASP.NET Core
 data           MySQL · SQL Server
 systems        Linux · Docker · networking
 delivery       GitHub Actions · Azure
+```
 
-The interface is only one layer. I like systems where the UI, backend rules, data model and operational environment all have to agree.
+---
 
-Flagship product
+## Opssemble
 
-Opssemble
+**FLAGSHIP PRODUCT · PRIVATE / PRE-LAUNCH**
 
-PRIVATE · PRE-LAUNCHEvent operations and readiness infrastructure for teams coordinating live work.
+Event operations and readiness software for teams coordinating live work.
 
-Live events should not depend on people mentally reconstructing readiness from messages, spreadsheets and scattered task updates. Opssemble models the operational state directly: areas, tasks, exceptions, roles, readiness, field access and live changes.
+Opssemble exists because operational readiness should not have to be reconstructed from WhatsApp messages, spreadsheets and scattered task updates.
 
-                           OPSSEMBLE
+It models an event as live operational state:
 
-        coordinators                      field staff
-              │                               │
-              ▼                               ▼
-      web application                  scoped QR workspace
-              │                               │
-              └──────────────┬────────────────┘
-                             ▼
-                        Fastify API
-                             │
-          ┌──────────────────┼──────────────────┐
-          ▼                  ▼                  ▼
-     auth / RBAC       readiness logic        MySQL
-                             │
-                             ▼
-                      live event rooms
-                             │
-                             ▼
-                            SSE
+```text
+event
+ │
+ ├── areas
+ │    ├── tasks
+ │    ├── exceptions
+ │    └── readiness
+ │
+ ├── members / roles
+ ├── operational checkpoints
+ ├── reporting
+ └── scoped field access
+```
 
-LIVE OPERATIONS — Server-Sent Events distribute changing operational state and viewer presence.
+The system currently includes:
 
-AUTHORIZATION — server-enforced event membership and role boundaries protect actions at the API.
+* **server-enforced event RBAC** across coordinator and staff workflows
+* **task + exception driven readiness** at event and area level
+* **Server-Sent Events** for live operational updates and viewer presence
+* **revocable QR capabilities** for temporary, scoped field access
+* **mobile operator workflows** including My Shift and cross-event queues
+* **protected completion evidence** and an operational audit timeline
+* authentication, Google OAuth, reports, CSV export, reusable templates and PWA support
 
-READINESS ENGINE — task completion, exceptions and timed checkpoints contribute to explicit readiness.
+```text
+ coordinators                         field staff
+      │                                   │
+      ▼                                   ▼
+web application                    QR workspace
+      │                                   │
+      └───────────────┬───────────────────┘
+                      ▼
+                 Fastify API
+                      │
+        ┌─────────────┼─────────────┐
+        ▼             ▼             ▼
+    auth / RBAC    readiness       MySQL
+                      │
+                      ▼
+               live event rooms
+                      │
+                      ▼
+                     SSE
+```
 
-FIELD ACCESS — revocable, SHA-256-hashed QR capabilities create temporary scoped guest sessions.
+`React` · `Vite` · `Material UI` · `TanStack Query` · `Fastify` · `Node.js` · `MySQL` · `SSE` · `JWT` · `Google OAuth`
 
-OPERATOR UX — mobile "My Shift" workflows and cross-event queues keep field work focused.
+**Private repository · product launch in preparation**
 
-EVIDENCE + AUDIT — protected completion evidence and activity history preserve operational context.
+[View the Opssemble case study →](https://gurmilansingh.com/opssemble)
 
-RESILIENCE — reconnection handling and installable PWA behaviour support continued use around live operations.
+---
 
-React · Vite · Material UI · TanStack Query · Fastify · Node.js · MySQL · SSE · JWT · Google OAuth
+## Selected systems
 
-Private repository · Product launch in preparation
+### 01 / MaintOps
 
-View product case study →
+**Maintenance operations platform**
 
-Selected systems
+A full-stack system for handling maintenance requests from initial report through assignment, work, resolution, SLA tracking and operational reporting.
 
-01 / MaintOps
+The interesting part is not the ticket form. It is the workflow behind it:
 
-Maintenance operations platform — a full-stack workflow system for maintenance requests, assignment, work, resolution, service-level tracking and operational reporting.
+* transactional state transitions
+* backend-owned RBAC and privileges
+* versioned SLA policies
+* background workers for scheduled operations
+* immutable operational history
+* protected evidence delivery
+* audited administration
+* optional AI assistance isolated from authoritative business state
 
-The interesting part is the state machine around the request:
+`React` · `Fastify` · `MySQL` · `REST` · `RBAC` · `Vitest`
 
-transactional workflow transitions
+[Explore the repository →](https://github.com/gurmilans-dev/maintops-public)
 
-backend-owned RBAC and privileges
+---
 
-versioned SLA policies and background processing
+### 02 / Gurmat Saanj
 
-immutable operational history
+**Real-time shared Gurbani reading system**
 
-protected evidence delivery
+Built for use at a local Gurdwara.
 
-audited administration
+Gurmat Saanj listens to live Punjabi recitation, matches recognized speech against known Gurbani lines and synchronizes the selected content across a projector and connected devices.
 
-AI assistance isolated from authoritative business state
+The problem is synchronization rather than speech recognition alone.
 
-React · Fastify · MySQL · REST · RBAC · Vitest
-
-Explore the repository →
-
-02 / Gurmat Saanj
-
-Real-time shared Gurbani reading and recognition system · used at a local Gurdwara
-
-This is a synchronization problem, not just a speech-recognition demo. Live Punjabi recitation is recognized and matched against known Gurbani lines, while a shared session keeps projector and viewer devices coordinated without forcing every device into the same presentation state.
-
+```text
 live recitation
       │
       ▼
- speech recognition
+ recognition
       │
       ▼
- normalisation ──► phrase matching ──► Gurbani line
-                                          │
-                               ┌──────────┴──────────┐
-                               ▼                     ▼
-                           projector              viewers
-                                                     │
-                                             local preferences
+normalisation ──► phrase matching ──► Gurbani line
+                                         │
+                              ┌──────────┴──────────┐
+                              ▼                     ▼
+                          projector              viewers
+                                                    │
+                                            local preferences
+```
 
-React · Node.js · Express · Web Speech API · BaniDB
+Connected devices can remain part of the same shared session while retaining their own reading preferences.
 
-Read the case study →
+`React` · `Node.js` · `Express` · `Web Speech API` · `BaniDB`
 
-03 / Production Business Platform
+[Read the case study →](https://gurmilansingh.com/gurmat-saanj)
 
-Commercial software · Production
+---
 
-Internal business software used in real operational workflows. I work across the system rather than at one isolated layer:
+### 03 / Production Business Platform
 
-interface ──► API ──► business rules ──► relational data
-    ▲                                      │
-    └──── permissions · releases · support ┘
+**Commercial software · Production**
 
-My work includes application interfaces, APIs, database-backed workflows, role-based permissions, releases, maintenance and user support. The implementation and business data are confidential.
+Internal business software used in real operational workflows.
 
-Read the case study →
+I work across the system rather than one isolated layer:
 
-04 / SIR Epidemic Simulator
+```text
+UI ──► API ──► business rules ──► relational data
+▲                                      │
+└──── permissions · releases · support ┘
+```
 
-Agent-based simulation · Java / JavaFX
+My work includes application interfaces, APIs, database-backed workflows, role-based permissions, releases, maintenance and user support.
 
-A desktop simulation where individual agents move through a bounded environment and transition between epidemiological states through proximity-based interactions. The simulation engine executes independently from the JavaFX rendering thread and exposes configurable infection, mortality, immunity, quarantine and social-distancing behaviour with live statistics and CSV export.
+The implementation and business data are confidential.
 
-Java 17 · JavaFX · Maven · FXML · Concurrency
+[Read the case study →](https://gurmilansingh.com/erp-case-study)
 
-Explore the repository →
+---
 
-Private builds
+### 04 / SIR Epidemic Simulator
 
-<details>
-<summary><strong>Alfaaz — private multilingual writing system · active development</strong></summary>
-<br>
+**Agent-based epidemic simulation · Java**
 
-A personal writing platform for poetry, shayari, fragments and longer-form writing across English, Hindi and Punjabi.
+A JavaFX simulation where individual agents move through a bounded environment and transition between epidemiological states through proximity-based interactions.
 
+It includes configurable infection parameters, mortality, immunity, quarantine, social distancing, live statistics and CSV export.
+
+The simulation engine executes independently from the JavaFX rendering thread.
+
+`Java 17` · `JavaFX` · `Maven` · `FXML` · `Concurrency`
+
+[Explore the repository →](https://github.com/gurmilans-dev/sir-simulation)
+
+---
+
+## Private build
+
+### Alfaaz
+
+**Multilingual writing system · active development**
+
+A private writing platform for poetry, shayari, fragments and longer-form work across English, Hindi and Punjabi.
+
+```text
 write
-  │
-  ├── autosave + conflict handling
-  ├── revisions + restore
-  ├── fragments + collections
-  ├── focus sessions
-  ├── transliteration
-  ├── voice notes
-  └── local exports
-          │
-          ▼
-     private archive
+ │
+ ├── autosave + conflict handling
+ ├── revisions + restore
+ ├── fragments + collections
+ ├── focus sessions
+ ├── transliteration
+ ├── voice notes
+ └── local exports
+         │
+         ▼
+    private archive
+```
 
-The design deliberately separates private writing from optional local capabilities: unfinished transliteration stays in the browser, local music never reaches the server, exports are generated client-side and user-owned data is scoped at the repository layer.
+Privacy boundaries are deliberate: unfinished transliteration stays in the browser, local music does not reach the server, exports are generated client-side and user-owned data is scoped at the repository layer.
 
-The backend uses explicit routes → controllers → services → repositories, parameterised SQL, database-backed sessions and transactional updates.
+`React` · `Express` · `MySQL` · `Zod` · `Playwright` · `Vitest`
 
-React · Express · MySQL · Zod · Playwright · Vitest
+---
 
-</details>
+## How I build
 
-System lifecycle
-
-$ build-system
-
+```text
 01  understand the workflow
 02  define state and boundaries
 03  make authorization a backend concern
@@ -203,28 +251,47 @@ $ build-system
 08  deploy
 09  discover what reality disagrees with
 10  fix it
+```
 
-External services and LLMs are tools, not architectural authorities.I prefer bounded inputs, validated outputs, explicit failure modes and human control over consequential actions.
+**External services and LLMs are tools, not architectural authorities.**
 
-Toolbox
+When I use them, I prefer bounded inputs, validated outputs, explicit failure modes and human control over consequential actions.
 
+---
+
+## Toolbox
+
+```text
 languages      JavaScript · C# · Java · SQL · Bash
+
 frontend       React · JavaFX · HTML · CSS
-backend        Node.js · Fastify · Express · ASP.NET Core
-data           MySQL · SQL Server · relational modelling
-systems        Linux · Docker · VMware ESXi · networking · SSH
+
+backend        Node.js · Fastify · Express
+               ASP.NET Core
+
+data           MySQL · SQL Server
+               relational modelling
+
+systems        Linux · Docker · VMware ESXi
+               networking · SSH
+
 delivery       Git · GitHub Actions · Azure
+```
 
-Architecture and systems thinking matter more to me than the number of technologies in the list.
+---
 
-Current status
+## Current
 
+```text
 location       Modena, Italy
 work           Software Developer
 education      BSc Computer Engineering
 graduation     expected December 2026
 focus          building systems worth explaining
+```
 
-<p align="center">
-  <strong><a href="https://gurmilansingh.com">gurmilansingh.com →</a></strong>
-</p>
+<div align="center">
+
+**[gurmilansingh.com →](https://gurmilansingh.com)**
+
+</div>
