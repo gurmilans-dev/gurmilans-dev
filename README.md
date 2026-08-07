@@ -39,3 +39,4 @@ JavaFX desktop application for agent-based epidemic simulation with configurable
 - LinkedIn: https://www.linkedin.com/in/gurmilan-singh-017b28284
 - GitHub: https://github.com/gurmilans-dev
 - Email: gurmilans01@gmail.com
+- Portfolio: https://gurmilansingh.com
