@@ -33,17 +33,10 @@ location: Modena, Italy
 role:
   - Software Developer
   - Computer Engineering student
-# interested_in:
-#   - full-stack systems
-#   - backend architecture
-#   - relational data
-#   - operational software
-#   - distributed state
-#   - reliable deployment
 
 currently:
   building: Alfaaz
-  working : Phema s.r.l.
+  working: Phema s.r.l.
   shipping: software people actually use
   graduating: December 2026
 ```
