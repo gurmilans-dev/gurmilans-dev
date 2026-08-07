@@ -27,23 +27,23 @@
 ## `01` / $ whoami
 
 ```yaml
-name:      Gurmilan Singh
-location:  Modena, Italy
+name: Gurmilan Singh
+location: Modena, Italy
 
 role:
   - Software Developer
   - Computer Engineering student
-
-interested_in:
-  - full-stack systems
-  - backend architecture
-  - relational data
-  - operational software
-  - distributed state
-  - reliable deployment
+# interested_in:
+#   - full-stack systems
+#   - backend architecture
+#   - relational data
+#   - operational software
+#   - distributed state
+#   - reliable deployment
 
 currently:
   building: Alfaaz
+  working : Phema s.r.l.
   shipping: software people actually use
   graduating: December 2026
 ```
@@ -119,17 +119,17 @@ Opssemble models an event as **live operational state** instead of a pile of dis
 The parts I care about most:
 
 `event RBAC`
- · 
+·
 `readiness modelling`
- · 
+·
 `state transitions`
- · 
+·
 `SSE`
- · 
+·
 `scoped QR capabilities`
- · 
+·
 `audit history`
- · 
+·
 `PWA`
 
 <p>
