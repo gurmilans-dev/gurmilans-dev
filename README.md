@@ -6,164 +6,124 @@
 
 **I build software that has to survive contact with real users.**
 
-`systems > screens`  ·  `workflow > CRUD`  ·  `reliability > demos`
+Full-stack systems around workflows, permissions, state, relational data, reliability and deployment.
 
 <br>
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-gurmilansingh.com-111111?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://gurmilansingh.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Gurmilan_Singh-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/gurmilan-singh-017b28284)
-[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:gurmilans01@gmail.com)
+<a href="https://gurmilansingh.com">
+  <strong>gurmilansingh.com</strong>
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/gurmilan-singh-017b28284">
+  <img src="https://cdn.simpleicons.org/linkedin/0A66C2" width="24" height="24" alt="LinkedIn" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="mailto:gurmilans01@gmail.com">
+  <img src="https://cdn.simpleicons.org/gmail/EA4335" width="24" height="24" alt="Email" />
+</a>
 
 </div>
 
 ---
 
-## `01` / Engineering profile
+## `01` / Engineering
 
-I build full-stack systems around **real workflows, permissions, state, relational data and operational constraints**.
+I am most interested in software where the interface is only one part of the problem.
 
-The UI matters — but I am usually more interested in everything that has to remain correct behind it:
+I like working on systems with **real workflows, explicit state, backend-owned authorization and relational data** — especially when correctness still matters after the application leaves a development machine.
 
-```text
-user action
-    │
-    ▼
-interface
-    │
-    ▼
-API boundary
-    │
-    ▼
-domain rules
-    │
-    ▼
-authorization
-    │
-    ▼
-relational state
-    │
-    ▼
-operations
-    │
-    ▼
-real users
-```
+`RBAC` · `state transitions` · `transactions` · `concurrency` · `auditability` · `failure paths` · `deployment`
 
-That means thinking about:
+### Toolbox
 
-`RBAC` · `state transitions` · `transactions` · `concurrency` · `failure paths` · `auditability` · `deployment` · `production support`
-
----
-
-## `02` / Stack
-
-<div align="center">
-
-### Languages
-
-<kbd>JavaScript</kbd> <kbd>C#</kbd> <kbd>Java</kbd> <kbd>SQL</kbd> <kbd>Bash</kbd>
-
-### Application
-
-<kbd>React</kbd> <kbd>Node.js</kbd> <kbd>Fastify</kbd> <kbd>Express</kbd> <kbd>ASP.NET Core</kbd> <kbd>JavaFX</kbd>
-
-### Data & Infrastructure
-
-<kbd>MySQL</kbd> <kbd>SQL Server</kbd> <kbd>Docker</kbd> <kbd>Linux</kbd> <kbd>Azure</kbd> <kbd>GitHub Actions</kbd>
-
-</div>
+<table>
+<tr>
+<td><strong>Languages</strong></td>
+<td>JavaScript · C# · Java · SQL · Bash</td>
+</tr>
+<tr>
+<td><strong>Frontend</strong></td>
+<td>React · JavaFX · HTML · CSS</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>Node.js · Fastify · Express · ASP.NET Core</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>MySQL · SQL Server · relational modelling</td>
+</tr>
+<tr>
+<td><strong>Systems</strong></td>
+<td>Linux · Docker · VMware ESXi · networking · SSH</td>
+</tr>
+<tr>
+<td><strong>Delivery</strong></td>
+<td>Git · GitHub Actions · Azure</td>
+</tr>
+</table>
 
 ---
 
-## `03` / Flagship — Opssemble
+## `02` / Opssemble
 
-> **Event operations and readiness software for teams coordinating live work.**
-> Private · Pre-launch
+> **Flagship product · Private / Pre-launch**
 
-Operational readiness should not have to be reconstructed from WhatsApp messages, spreadsheets and scattered task updates.
+### Event operations and readiness software for teams coordinating live work.
 
-**Opssemble** models an event as live operational state.
+Opssemble exists because operational readiness should not have to be reconstructed from WhatsApp messages, spreadsheets and scattered task updates.
+
+It models an event as **live operational state** rather than a collection of disconnected tasks.
 
 ```mermaid
 flowchart LR
-    C[Coordinators] --> WEB[Web application]
-    F[Field staff] --> QR[Scoped QR workspace]
+    C[Coordinators] --> W[Web application]
+    F[Field staff] --> Q[Scoped QR workspace]
 
-    WEB --> API[Fastify API]
-    QR --> API
+    W --> API[Fastify API]
+    Q --> API
 
-    API --> AUTH[Auth / RBAC]
-    API --> READY[Readiness engine]
+    API --> R[Auth / RBAC]
+    API --> E[Readiness engine]
     API --> DB[(MySQL)]
 
-    READY --> SSE[Live event rooms / SSE]
-    SSE --> WEB
-    SSE --> QR
+    E --> SSE[Live event rooms / SSE]
 ```
 
 ### Engineering highlights
 
-* **Server-enforced event RBAC** across coordinator and staff workflows
-* **Task + exception driven readiness** at event and area level
-* **Server-Sent Events** for live operational state and viewer presence
-* **Revocable QR capabilities** for temporary scoped field access
-* Mobile operator workflows including **My Shift** and cross-event queues
-* Protected completion evidence and **operational audit timeline**
-* Authentication + Google OAuth
-* Reports, CSV export and reusable event templates
-* PWA support
+* server-enforced **event RBAC** across coordinator and staff workflows
+* task and exception driven **readiness** at event and area level
+* **Server-Sent Events** for operational updates and viewer presence
+* revocable **QR capabilities** for temporary scoped field access
+* mobile operator workflows including **My Shift** and cross-event queues
+* protected completion evidence and an operational **audit timeline**
+* authentication and Google OAuth
+* reports, CSV export, reusable templates and PWA support
 
-**Stack**
+`React` · `Vite` · `Material UI` · `TanStack Query` · `Fastify` · `Node.js` · `MySQL` · `SSE` · `JWT`
 
-<kbd>React</kbd> <kbd>Vite</kbd> <kbd>Material UI</kbd> <kbd>TanStack Query</kbd> <kbd>Fastify</kbd> <kbd>Node.js</kbd> <kbd>MySQL</kbd> <kbd>SSE</kbd> <kbd>JWT</kbd> <kbd>OAuth</kbd>
-
-**[Read the Opssemble case study →](https://gurmilansingh.com/opssemble)**
+**[View the Opssemble case study →](https://gurmilansingh.com/opssemble)**
 
 ---
 
-## `04` / Selected systems
-
-| Project                                                                      | System                           | Engineering focus                                              |
-| ---------------------------------------------------------------------------- | -------------------------------- | -------------------------------------------------------------- |
-| **[MaintOps](https://github.com/gurmilans-dev/maintops-public)**             | Maintenance operations platform  | Transactions · RBAC · SLA policies · workers · audit history   |
-| **[Gurmat Saanj](https://gurmilansingh.com/gurmat-saanj)**                   | Real-time shared Gurbani reading | Speech matching · synchronization · multi-client state         |
-| **[Production Business Platform](https://gurmilansingh.com/erp-case-study)** | Commercial internal software     | APIs · relational workflows · permissions · releases · support |
-| **[SIR Simulator](https://github.com/gurmilans-dev/sir-simulation)**         | Agent-based epidemic simulation  | Java concurrency · simulation engine · JavaFX · data export    |
-
----
+## `03` / Selected systems
 
 ### MaintOps
 
 **Maintenance operations platform**
 
-A full-stack system that models a maintenance request from initial report through assignment, work, resolution, SLA tracking and operational reporting.
+A full-stack system handling maintenance work from initial report through assignment, resolution, SLA tracking and operational reporting.
 
-The interesting part isn't the ticket form. It's the state machine behind it.
+The interesting part is not the ticket form. It is the workflow behind it.
 
-```mermaid
-stateDiagram-v2
-    [*] --> Reported
-    Reported --> Assigned
-    Assigned --> InProgress
-    InProgress --> Resolved
-    Resolved --> Closed
+**Engineering**
 
-    InProgress --> Blocked
-    Blocked --> InProgress
-```
+`transactional state transitions` · `backend RBAC` · `versioned SLA policies` · `background workers` · `immutable history` · `audited administration`
 
-Engineering includes:
+Optional AI assistance is deliberately isolated from authoritative business state.
 
-* transactional state transitions
-* backend-owned RBAC and privileges
-* versioned SLA policies
-* scheduled background operations
-* immutable operational history
-* protected evidence delivery
-* audited administration
-* optional AI assistance isolated from authoritative business state
-
-<kbd>React</kbd> <kbd>Fastify</kbd> <kbd>MySQL</kbd> <kbd>REST</kbd> <kbd>RBAC</kbd> <kbd>Vitest</kbd>
+`React` · `Fastify` · `MySQL` · `REST` · `Vitest`
 
 **[Explore repository →](https://github.com/gurmilans-dev/maintops-public)**
 
@@ -175,26 +135,15 @@ Engineering includes:
 
 Built for use at a local Gurdwara.
 
-The system listens to live Punjabi recitation, matches recognized speech against known Gurbani lines and synchronizes the selected content across a projector and connected devices.
+Gurmat Saanj listens to live Punjabi recitation, matches recognized speech against known Gurbani lines and synchronizes the selected content across a projector and connected devices.
 
-The interesting engineering problem is **shared synchronization**, not speech recognition alone.
+The main engineering problem is **synchronization rather than speech recognition alone**.
 
-```mermaid
-flowchart LR
-    A[Live recitation] --> B[Recognition]
-    B --> C[Normalization]
-    C --> D[Phrase matching]
-    D --> E[Gurbani line]
+Connected devices remain part of the same shared session while retaining their own reading preferences.
 
-    E --> P[Projector]
-    E --> V[Connected viewers]
+`React` · `Node.js` · `Express` · `Web Speech API` · `BaniDB`
 
-    V --> LP[Local reading preferences]
-```
-
-<kbd>React</kbd> <kbd>Node.js</kbd> <kbd>Express</kbd> <kbd>Web Speech API</kbd> <kbd>BaniDB</kbd>
-
-**[Read case study →](https://gurmilansingh.com/gurmat-saanj)**
+**[Read the case study →](https://gurmilansingh.com/gurmat-saanj)**
 
 ---
 
@@ -204,29 +153,15 @@ flowchart LR
 
 Internal business software used in real operational workflows.
 
-My work spans the system rather than one isolated layer:
+I work across the system rather than one isolated layer:
 
-```text
-interface
-   │
-   ▼
-  API
-   │
-   ▼
-business rules
-   │
-   ▼
-relational data
-   │
-   └────► permissions
-          releases
-          maintenance
-          user support
-```
+`UI → API → business rules → relational data → operations`
+
+My work includes application interfaces, APIs, database-backed workflows, role-based permissions, releases, maintenance and user support.
 
 The implementation and business data are confidential.
 
-**[Read case study →](https://gurmilansingh.com/erp-case-study)**
+**[Read the case study →](https://gurmilansingh.com/erp-case-study)**
 
 ---
 
@@ -236,91 +171,70 @@ The implementation and business data are confidential.
 
 A JavaFX simulation where individual agents move through a bounded environment and transition between epidemiological states through proximity-based interactions.
 
-The simulation engine runs independently from the JavaFX rendering thread.
+It includes configurable infection parameters, mortality, immunity, quarantine, social distancing, live statistics and CSV export.
 
-Includes configurable:
+The simulation engine executes independently from the JavaFX rendering thread.
 
-`infection` · `mortality` · `immunity` · `quarantine` · `social distancing` · `live statistics` · `CSV export`
-
-<kbd>Java 17</kbd> <kbd>JavaFX</kbd> <kbd>Maven</kbd> <kbd>FXML</kbd> <kbd>Concurrency</kbd>
+`Java 17` · `JavaFX` · `Maven` · `FXML` · `Concurrency`
 
 **[Explore repository →](https://github.com/gurmilans-dev/sir-simulation)**
 
 ---
 
-## `05` / Currently building
+## `04` / Currently building
 
 ### Alfaaz
 
-> **Multilingual writing system · Private · Active development**
+**Multilingual writing system · Private / Active development**
 
-A writing platform for poetry, shayari, fragments and long-form work across **English, Hindi and Punjabi**.
+A private writing platform for poetry, shayari, fragments and longer-form work across English, Hindi and Punjabi.
 
-```text
-writing
-  │
-  ├── autosave + conflict handling
-  ├── revisions + restore
-  ├── fragments + collections
-  ├── focus sessions
-  ├── transliteration
-  ├── voice notes
-  └── local exports
-           │
-           ▼
-      private archive
-```
+Current engineering areas include:
 
-Privacy boundaries are deliberate:
+* autosave and conflict handling
+* revisions and restore
+* fragments and collections
+* focus sessions
+* transliteration
+* voice notes
+* local exports
+* repository-level user data isolation
 
-* unfinished transliteration stays in the browser
-* local music never reaches the server
-* exports are generated client-side
-* user-owned data is scoped at the repository layer
+Privacy boundaries are deliberate: unfinished transliteration stays in the browser, local music does not reach the server and exports are generated client-side.
 
-<kbd>React</kbd> <kbd>Express</kbd> <kbd>MySQL</kbd> <kbd>Zod</kbd> <kbd>Playwright</kbd> <kbd>Vitest</kbd>
+`React` · `Express` · `MySQL` · `Zod` · `Playwright` · `Vitest`
 
 ---
 
-## `06` / How I engineer systems
+## `05` / How I build
 
 ```text
 01  understand the real workflow
-
-02  identify state and ownership
-
-03  define system boundaries
-
-04  make authorization a backend concern
-
-05  model the data explicitly
-
-06  design failure paths
-
-07  automate repeatable work
-
-08  test assumptions
-
-09  deploy
-
-10  find what reality disagrees with
-
-11  fix it
+02  define state and ownership
+03  make authorization a backend concern
+04  keep the data model explicit
+05  design failure paths
+06  automate repeatable work
+07  test assumptions
+08  deploy
+09  find what reality disagrees with
+10  fix it
 ```
 
 > **External services and LLMs are tools, not architectural authorities.**
 
-I prefer bounded inputs, validated outputs, explicit failure modes and human control over consequential actions.
+When I use them, I prefer bounded inputs, validated outputs, explicit failure modes and human control over consequential actions.
 
 ---
 
-## `07` / Current
+## `06` / Current
 
 ```yaml
 location:   Modena, Italy
 role:       Software Developer
 education:  BSc Computer Engineering
 graduation: December 2026
+
 focus:
   - full-stack systems
   - backend architecture
@@ -336,7 +250,5 @@ focus:
 ### Build software that still makes sense after deployment.
 
 **[gurmilansingh.com →](https://gurmilansingh.com)**
-
-<sub>Modena, Italy · Software Engineering · Computer Engineering</sub>
 
 </div>
