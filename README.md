@@ -1,101 +1,202 @@
+<div align="center">
+
 # Gurmilan Singh
 
-Computer Engineering student and Software Developer based in Modena, Italy.
+### Software Engineer · Computer Engineering
 
-I build full-stack software for operational workflows, data management and automation, with experience developing and supporting business applications used in production.
+**I build software that has to survive contact with real users.**
 
-My work spans frontend interfaces, backend services, relational databases, authentication and authorization, deployment, and system maintenance.
+Full-stack systems, operational workflows, backend services, relational data,
+automation, infrastructure, and the occasional problem that should not have required this much debugging.
 
-## Selected Projects
+[Portfolio](https://gurmilansingh.com) · [LinkedIn](https://www.linkedin.com/in/gurmilan-singh-017b28284) · [Email](mailto:gurmilans01@gmail.com)
 
-### MaintOps
-
-Full-stack maintenance operations system for managing requests, technician workflows, assignments, SLA tracking, reporting and administration.
-
-The application uses server-side authorization, transactional workflow transitions, audit history, versioned SLA policies, background workers and protected attachment storage.
-
-**Stack:** React · Fastify · MySQL · JavaScript · REST APIs · Vitest · Node.js Test Runner
-
-[Repository](https://github.com/gurmilans-dev/maintops-public)
+</div>
 
 ---
 
-### Gurmat Saanj
+```text
+                     ┌──────────────────────┐
+                     │      INTERFACE       │
+                     │   React · JavaFX     │
+                     └──────────┬───────────┘
+                                │
+                                ▼
+                     ┌──────────────────────┐
+                     │     APPLICATION      │
+                     │ Node · Fastify · .NET│
+                     └──────────┬───────────┘
+                                │
+                                ▼
+                     ┌──────────────────────┐
+                     │         DATA         │
+                     │ MySQL · SQL Server   │
+                     └──────────┬───────────┘
+                                │
+                                ▼
+                     ┌──────────────────────┐
+                     │      OPERATIONS      │
+                     │ Linux · CI · Deploy  │
+                     └──────────────────────┘
+```
 
-Full-stack application used at a local Gurdwara to support live Punjabi recitation.
+## Selected systems
 
-The system matches recognized speech against known Gurbani lines and synchronizes selected content across a projector, viewer devices and a controlled mobile editor.
+### 01 / MaintOps
 
-**Stack:** React · Node.js · Express · Web Speech API · BaniDB
+**Maintenance operations platform**
 
-[Case study](https://gurmilansingh.com/gurmat-saanj)
+A full-stack system for handling maintenance requests from initial report through assignment, work, resolution, SLA tracking and operational reporting.
+
+What makes it interesting is not the ticket form.
+
+It is the system around it:
+
+* server-side role and privilege enforcement
+* transactional workflow transitions
+* immutable operational history
+* versioned SLA policies
+* background workers for scheduled operations
+* protected evidence and attachment delivery
+* audited administration
+* AI assistance isolated from core business state
+
+`React` `Fastify` `MySQL` `REST` `RBAC` `Vitest`
+
+**[Explore the repository →](https://github.com/gurmilans-dev/maintops-public)**
 
 ---
 
-### Production Business Platform
+### 02 / Gurmat Saanj
 
-Internal full-stack business software used for day-to-day operational workflows.
+**Real-time shared reading system**
 
-My work includes product interfaces, backend APIs, relational data, role-based permissions, deployment, maintenance and user support.
+Built for use at a local Gurdwara.
 
-The source code and business data are confidential.
+The application listens to live Punjabi recitation, matches recognized speech against known Gurbani lines and synchronizes the selected content across a projector and connected devices.
 
-[Case study](https://gurmilansingh.com/erp-case-study)
+```text
+speech
+  │
+  ▼
+recognition
+  │
+  ▼
+normalisation ──► phrase matching ──► Gurbani line
+                                      │
+                         ┌────────────┴────────────┐
+                         ▼                         ▼
+                     projector                 viewers
+                                                    │
+                                             local reading
+                                              preferences
+```
 
-## Additional Work
+The system also supports controlled mobile editing and shared-session coordination without forcing every connected device into the same presentation state.
+
+`React` `Node.js` `Express` `Web Speech API` `BaniDB`
+
+**[Read the case study →](https://gurmilansingh.com/gurmat-saanj)**
+
+---
+
+### 03 / Production Business Platform
+
+**Commercial software · Production**
+
+Internal business software used in real operational workflows.
+
+I work across the system rather than one isolated layer:
+
+```text
+UI ──► API ──► business rules ──► relational data
+ ▲                                      │
+ └──── permissions · releases · support ┘
+```
+
+My responsibilities include application interfaces, APIs, database-backed workflows, role-based permissions, releases, maintenance and user support.
+
+The implementation and business data are confidential.
+
+**[Read the case study →](https://gurmilansingh.com/erp-case-study)**
+
+---
+
+### 04 / SIR Epidemic Simulator
+
+**Agent-based simulation · Java**
+
+A JavaFX desktop simulation where individual agents move through a bounded environment and transition between epidemiological states through proximity-based interactions.
+
+Includes configurable infection parameters, mortality, immunity, quarantine, social distancing, live statistics and CSV export.
+
+The simulation engine executes independently from the JavaFX rendering thread.
+
+`Java 17` `JavaFX` `Maven` `FXML` `Concurrency`
+
+**[Explore the repository →](https://github.com/gurmilans-dev/sir-simulation)**
+
+---
+
+## Under development
 
 ### Opssemble
 
-Event operations platform for coordinating areas, tasks, exceptions, readiness and scoped staff access.
+An event-operations system built around areas, tasks, exceptions, readiness and scoped access.
 
-**Stack:** React · Fastify · MySQL · JWT · Google OAuth 2.0
+Rather than treating an event as a flat task list, the system models operational state per area and derives readiness from unresolved work and blocking exceptions.
 
-[Case study](https://gurmilansingh.com/opssemble)
+`React` `Fastify` `MySQL` `JWT` `Google OAuth`
 
-### SIR Epidemic Simulator
+**[View project →](https://gurmilansingh.com/opssemble)**
 
-JavaFX desktop application for agent-based epidemic simulation with configurable infection parameters, real-time visualization, intervention controls and CSV export.
+---
 
-The simulation engine runs independently from the JavaFX UI thread.
+## How I tend to build
 
-**Stack:** Java 17 · JavaFX · Maven · FXML · Concurrency
+```text
+01  understand the workflow
+02  define state and boundaries
+03  make authorization a backend concern
+04  keep the data model boring and explicit
+05  design failure paths before adding cleverness
+06  automate what is repeatable
+07  measure twice
+08  deploy
+09  discover what reality disagrees with
+10  fix it
+```
 
-[Repository](https://github.com/gurmilans-dev/sir-simulation)
+I am particularly interested in software where application code meets **real operational constraints**: permissions, state transitions, concurrent users, unreliable external services, existing infrastructure and maintainability after deployment.
 
-## Engineering Focus
+## Toolbox
 
-* Full-stack application development
-* REST API and backend service design
-* Authentication, authorization and role-based access control
-* Relational database design and SQL
-* Business workflows and state transitions
-* Testing and maintainable application architecture
-* Linux systems, networking and deployment
-* Controlled integration of external APIs and LLM services
+```text
+languages      JavaScript · C# · Java · SQL · Bash
+frontend       React · JavaFX · HTML · CSS
+backend        Node.js · Fastify · Express · ASP.NET Core
+data           MySQL · SQL Server · relational modelling
+systems        Linux · Docker · VMware ESXi · networking · SSH
+delivery       Git · GitHub Actions · Azure
+```
 
-## Technologies
+External services and LLMs are tools, not architectural authorities.
+When I use them, I prefer bounded inputs, validated outputs, explicit failure modes and human control over consequential actions.
 
-**Languages**
-JavaScript · C# · Java · SQL · HTML · CSS · Bash
+---
 
-**Frontend**
-React · Vite · Material UI · JavaFX
+## Current status
 
-**Backend**
-Node.js · Fastify · Express · ASP.NET Core · REST APIs
+```text
+location       Modena, Italy
+work           Software Developer
+education      BSc Computer Engineering
+graduation     expected December 2026
+focus          building systems worth explaining
+```
 
-**Data**
-MySQL · SQL Server · Relational data modeling
+<div align="center">
 
-**Systems & Tools**
-Linux · Docker · Git · GitHub Actions · Azure · VMware ESXi · SSH
+### [`gurmilansingh.com`](https://gurmilansingh.com)
 
-## Currently
-
-* Completing my BSc in Computer Engineering at the University of Modena and Reggio Emilia
-* Developing and maintaining full-stack software
-* Building and documenting engineering projects for my public portfolio
-
-## Links
-
-[Portfolio](https://gurmilansingh.com) · [LinkedIn](https://www.linkedin.com/in/gurmilan-singh-017b28284) · [GitHub](https://github.com/gurmilans-dev)
+</div>
