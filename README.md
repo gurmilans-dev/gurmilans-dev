@@ -140,17 +140,67 @@ The simulation engine executes independently from the JavaFX rendering thread.
 
 ## Under development
 
+### Alfaaz
+
+**Private multilingual writing system**
+
+A personal writing platform for poetry, shayari, fragments and longer-form writing across English, Hindi and Punjabi.
+
+The interesting part is not just the editor.
+
+```text
+write
+  │
+  ├── autosave + conflict handling
+  ├── revisions + restore
+  ├── fragments + collections
+  ├── focus sessions
+  ├── transliteration
+  ├── voice notes
+  └── local exports
+          │
+          ▼
+     private archive
+```
+
+The application deliberately separates private writing from optional local capabilities: unfinished transliteration stays in the browser, local music never reaches the server, exports are generated client-side, and user-owned data is scoped at the repository layer.
+
+The backend uses explicit routes → controllers → services → repositories, parameterised SQL, database-backed sessions and transactional updates.
+
+`React` `Express` `MySQL` `Zod` `Playwright` `Vitest`
+
+**Status:** active development
+
+---
+
 ### Opssemble
 
-An event-operations system built around areas, tasks, exceptions, readiness and scoped access.
+**Event operations system**
 
-Rather than treating an event as a flat task list, the system models operational state per area and derives readiness from unresolved work and blocking exceptions.
+A system for coordinating event areas, tasks, exceptions, readiness and scoped staff access.
+
+Instead of treating an event as a flat checklist, Opssemble models operational state by area:
+
+```text
+event
+  │
+  ├── areas
+  │    ├── tasks
+  │    └── exceptions
+  │
+  └── readiness
+         │
+         └── scoped QR access
+```
+
+The goal is to make operational readiness explicit rather than inferred from scattered task updates.
 
 `React` `Fastify` `MySQL` `JWT` `Google OAuth`
 
+**Status:** active development
+
 **[View project →](https://gurmilansingh.com/opssemble)**
 
----
 
 ## How I tend to build
 
