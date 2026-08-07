@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 152" width="900" height="152" role="img" aria-label="Build pipeline: ten stages in order — workflow, state, authz, data, failure, automate, test, deploy, reality, fix — where the last two loop back into each other indefinitely.">
+  <style>
+    .t    { font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .dim  { fill: #8b949e; font-size: 11.5px; }
+    .node { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
+    .num  { fill: #8b949e; font-size: 10.5px; }
+    .rail { stroke: #21262d; stroke-width: 2; fill: none; }
+    .lit  { fill: none; stroke: #58a6ff; stroke-width: 1.8; opacity: 0; }
+    .lbl  { font-size: 10px; fill: #6e7681; }
+    .loop { fill: none; stroke: #d29922; stroke-width: 1.5; stroke-dasharray: 3 4; }
+
+    .tok { fill: #58a6ff; animation: run 9s linear infinite; }
+    @keyframes run {
+      0%   { transform: translateX(60px);  opacity: 0; }
+      2%   { transform: translateX(60px);  opacity: 1; }
+      52%  { transform: translateX(840px); opacity: 1; }
+      64%  { transform: translateX(753px); opacity: 1; }
+      76%  { transform: translateX(840px); opacity: 1; }
+      88%  { transform: translateX(753px); opacity: 1; }
+      97%  { transform: translateX(840px); opacity: 1; }
+      100% { transform: translateX(840px); opacity: 0; }
+    }
+    .lit, .lbl { animation-duration: 9s; animation-timing-function: linear; animation-iteration-count: infinite; }
+    @keyframes l1  { 0%{opacity:0}    1.5%,100%{opacity:1} }
+    @keyframes l2  { 0%,5.8%{opacity:0}  7.3%,100%{opacity:1} }
+    @keyframes l3  { 0%,11.6%{opacity:0} 13.1%,100%{opacity:1} }
+    @keyframes l4  { 0%,17.3%{opacity:0} 18.8%,100%{opacity:1} }
+    @keyframes l5  { 0%,23.1%{opacity:0} 24.6%,100%{opacity:1} }
+    @keyframes l6  { 0%,28.9%{opacity:0} 30.4%,100%{opacity:1} }
+    @keyframes l7  { 0%,34.7%{opacity:0} 36.2%,100%{opacity:1} }
+    @keyframes l8  { 0%,40.4%{opacity:0} 41.9%,100%{opacity:1} }
+    @keyframes l9  { 0%,46.2%{opacity:0} 47.7%,100%{opacity:1} }
+    @keyframes l10 { 0%,52%{opacity:0}   53.5%,100%{opacity:1} }
+    @keyframes f1  { 0%{fill:#6e7681}    1.5%,100%{fill:#e6edf3} }
+    @keyframes f2  { 0%,5.8%{fill:#6e7681}  7.3%,100%{fill:#e6edf3} }
+    @keyframes f3  { 0%,11.6%{fill:#6e7681} 13.1%,100%{fill:#e6edf3} }
+    @keyframes f4  { 0%,17.3%{fill:#6e7681} 18.8%,100%{fill:#e6edf3} }
+    @keyframes f5  { 0%,23.1%{fill:#6e7681} 24.6%,100%{fill:#e6edf3} }
+    @keyframes f6  { 0%,28.9%{fill:#6e7681} 30.4%,100%{fill:#e6edf3} }
+    @keyframes f7  { 0%,34.7%{fill:#6e7681} 36.2%,100%{fill:#e6edf3} }
+    @keyframes f8  { 0%,40.4%{fill:#6e7681} 41.9%,100%{fill:#e6edf3} }
+    @keyframes f9  { 0%,46.2%{fill:#6e7681} 47.7%,100%{fill:#e6edf3} }
+    @keyframes f10 { 0%,52%{fill:#6e7681}   53.5%,100%{fill:#e6edf3} }
+    .loopArc { animation: arc 9s linear infinite; }
+    @keyframes arc { 0%,52%{opacity:.25} 56%,100%{opacity:1} }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tok { animation: none; opacity: 0; }
+      .lit { animation: none; opacity: 0; }
+      .lbl { animation: none; fill: #8b949e; }
+      .loopArc { animation: none; opacity: 1; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="899" height="151" rx="10" fill="#0d1117" stroke="#30363d"/>
+  <text class="t dim" x="24" y="28">how I build · 01 → 10</text>
+
+  <path class="rail" d="M60 84h780"/>
+
+  <!-- 09 and 10 never stop handing off to each other -->
+  <path class="loop loopArc" d="M840 68q-43-34-87 0"/>
+  <path class="loop loopArc" d="M753 68l6-7m-6 7l7 5" stroke-dasharray="0"/>
+  <text class="t loopArc" x="796" y="40" fill="#d29922" font-size="11" text-anchor="middle">↺ forever</text>
+
+  <g class="t">
+    <circle class="node" cx="60"  cy="84" r="14"/><circle class="lit" style="animation-name:l1"  cx="60"  cy="84" r="14"/><text class="num" x="60"  y="88" text-anchor="middle">01</text><text class="lbl" style="animation-name:f1"  x="60"  y="118" text-anchor="middle">workflow</text>
+    <circle class="node" cx="147" cy="84" r="14"/><circle class="lit" style="animation-name:l2"  cx="147" cy="84" r="14"/><text class="num" x="147" y="88" text-anchor="middle">02</text><text class="lbl" style="animation-name:f2"  x="147" y="118" text-anchor="middle">state</text>
+    <circle class="node" cx="233" cy="84" r="14"/><circle class="lit" style="animation-name:l3"  cx="233" cy="84" r="14"/><text class="num" x="233" y="88" text-anchor="middle">03</text><text class="lbl" style="animation-name:f3"  x="233" y="118" text-anchor="middle">authz</text>
+    <circle class="node" cx="320" cy="84" r="14"/><circle class="lit" style="animation-name:l4"  cx="320" cy="84" r="14"/><text class="num" x="320" y="88" text-anchor="middle">04</text><text class="lbl" style="animation-name:f4"  x="320" y="118" text-anchor="middle">data</text>
+    <circle class="node" cx="407" cy="84" r="14"/><circle class="lit" style="animation-name:l5"  cx="407" cy="84" r="14"/><text class="num" x="407" y="88" text-anchor="middle">05</text><text class="lbl" style="animation-name:f5"  x="407" y="118" text-anchor="middle">failure</text>
+    <circle class="node" cx="493" cy="84" r="14"/><circle class="lit" style="animation-name:l6"  cx="493" cy="84" r="14"/><text class="num" x="493" y="88" text-anchor="middle">06</text><text class="lbl" style="animation-name:f6"  x="493" y="118" text-anchor="middle">automate</text>
+    <circle class="node" cx="580" cy="84" r="14"/><circle class="lit" style="animation-name:l7"  cx="580" cy="84" r="14"/><text class="num" x="580" y="88" text-anchor="middle">07</text><text class="lbl" style="animation-name:f7"  x="580" y="118" text-anchor="middle">test</text>
+    <circle class="node" cx="667" cy="84" r="14"/><circle class="lit" style="animation-name:l8"  cx="667" cy="84" r="14"/><text class="num" x="667" y="88" text-anchor="middle">08</text><text class="lbl" style="animation-name:f8"  x="667" y="118" text-anchor="middle">deploy</text>
+    <circle class="node" cx="753" cy="84" r="14"/><circle class="lit" style="animation-name:l9"  cx="753" cy="84" r="14"/><text class="num" x="753" y="88" text-anchor="middle">09</text><text class="lbl" style="animation-name:f9"  x="753" y="118" text-anchor="middle">reality</text>
+    <circle class="node" cx="840" cy="84" r="14"/><circle class="lit" style="animation-name:l10" cx="840" cy="84" r="14"/><text class="num" x="840" y="88" text-anchor="middle">10</text><text class="lbl" style="animation-name:f10" x="840" y="118" text-anchor="middle">fix</text>
+  </g>
+
+  <circle class="tok" cx="0" cy="84" r="5"/>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 268" width="840" height="268" role="img" aria-label="Agent-based SIR epidemic simulation: 26 agents wander a bounded box, turning from susceptible to infected to recovered, alongside the susceptible, infected and recovered curves produced by the same run.">
+<style>
+.t{font-family:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,"Liberation Mono",monospace}
+.dim{fill:#8b949e;font-size:11px}
+.pane{fill:#010409;stroke:#30363d;stroke-width:1}
+.grid{stroke:#21262d;stroke-width:1;fill:none}
+
+.c{fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation-duration:14s;animation-timing-function:linear;animation-iteration-count:infinite}
+@keyframes dS{0%{stroke-dashoffset:331}92%,100%{stroke-dashoffset:0}}
+@keyframes dI{0%{stroke-dashoffset:381}92%,100%{stroke-dashoffset:0}}
+@keyframes dR{0%{stroke-dashoffset:316}92%,100%{stroke-dashoffset:0}}
+.sweep{stroke:#8b949e;stroke-width:1;opacity:.45;animation:sw 14s linear infinite}
+@keyframes sw{0%{transform:translateX(0)}92%,100%{transform:translateX(274px)}}
+@keyframes w0{0%{transform:translate(0px,0px)}20%{transform:translate(12px,139px)}40%{transform:translate(143px,-18px)}60%{transform:translate(-87px,38px)}80%{transform:translate(51px,55px)}100%{transform:translate(0,0)}}
+@keyframes s0{0%,0%{fill:#58a6ff}0.4%,7.3%{fill:#f85149}7.7%,100%{fill:#3fb950}}
+@keyframes w1{0%{transform:translate(0px,0px)}20%{transform:translate(4px,15px)}40%{transform:translate(-118px,46px)}60%{transform:translate(-49px,-49px)}80%{transform:translate(136px,-6px)}100%{transform:translate(0,0)}}
+@keyframes s1{0%,2.8%{fill:#58a6ff}3.2%,14.6%{fill:#f85149}15.0%,100%{fill:#3fb950}}
+@keyframes w2{0%{transform:translate(0px,0px)}20%{transform:translate(100px,-44px)}40%{transform:translate(-204px,67px)}60%{transform:translate(-98px,-31px)}80%{transform:translate(12px,67px)}100%{transform:translate(0,0)}}
+@keyframes s2{0%,6.9%{fill:#58a6ff}7.3%,19.1%{fill:#f85149}19.5%,100%{fill:#3fb950}}
+@keyframes w3{0%{transform:translate(0px,0px)}20%{transform:translate(-41px,-65px)}40%{transform:translate(3px,-76px)}60%{transform:translate(71px,-108px)}80%{transform:translate(-166px,-89px)}100%{transform:translate(0,0)}}
+@keyframes s3{0%,9.8%{fill:#58a6ff}10.2%,22.5%{fill:#f85149}22.9%,100%{fill:#3fb950}}
+@keyframes w4{0%{transform:translate(0px,0px)}20%{transform:translate(-72px,75px)}40%{transform:translate(-31px,108px)}60%{transform:translate(-319px,-30px)}80%{transform:translate(-134px,95px)}100%{transform:translate(0,0)}}
+@keyframes s4{0%,12.3%{fill:#58a6ff}12.7%,25.4%{fill:#f85149}25.8%,100%{fill:#3fb950}}
+@keyframes w5{0%{transform:translate(0px,0px)}20%{transform:translate(-119px,65px)}40%{transform:translate(-125px,16px)}60%{transform:translate(-195px,12px)}80%{transform:translate(136px,-15px)}100%{transform:translate(0,0)}}
+@keyframes s5{0%,14.3%{fill:#58a6ff}14.7%,28%{fill:#f85149}28.4%,100%{fill:#3fb950}}
+@keyframes w6{0%{transform:translate(0px,0px)}20%{transform:translate(-214px,123px)}40%{transform:translate(-8px,3px)}60%{transform:translate(-3px,-27px)}80%{transform:translate(-7px,12px)}100%{transform:translate(0,0)}}
+@keyframes s6{0%,16.2%{fill:#58a6ff}16.6%,30.4%{fill:#f85149}30.8%,100%{fill:#3fb950}}
+@keyframes w7{0%{transform:translate(0px,0px)}20%{transform:translate(-157px,-104px)}40%{transform:translate(-349px,-55px)}60%{transform:translate(-192px,-119px)}80%{transform:translate(-101px,4px)}100%{transform:translate(0,0)}}
+@keyframes s7{0%,17.9%{fill:#58a6ff}18.3%,32.8%{fill:#f85149}33.2%,100%{fill:#3fb950}}
+@keyframes w8{0%{transform:translate(0px,0px)}20%{transform:translate(135px,63px)}40%{transform:translate(307px,-21px)}60%{transform:translate(-21px,-47px)}80%{transform:translate(169px,-84px)}100%{transform:translate(0,0)}}
+@keyframes s8{0%,19.5%{fill:#58a6ff}19.9%,35%{fill:#f85149}35.4%,100%{fill:#3fb950}}
+@keyframes w9{0%{transform:translate(0px,0px)}20%{transform:translate(-254px,-23px)}40%{transform:translate(-5px,16px)}60%{transform:translate(-207px,-81px)}80%{transform:translate(-162px,-24px)}100%{transform:translate(0,0)}}
+@keyframes s9{0%,21%{fill:#58a6ff}21.4%,37.2%{fill:#f85149}37.6%,100%{fill:#3fb950}}
+@keyframes w10{0%{transform:translate(0px,0px)}20%{transform:translate(-84px,-17px)}40%{transform:translate(-324px,-3px)}60%{transform:translate(-309px,-76px)}80%{transform:translate(-356px,-132px)}100%{transform:translate(0,0)}}
+@keyframes s10{0%,22.5%{fill:#58a6ff}22.9%,39.5%{fill:#f85149}39.9%,100%{fill:#3fb950}}
+@keyframes w11{0%{transform:translate(0px,0px)}20%{transform:translate(-172px,72px)}40%{transform:translate(-98px,28px)}60%{transform:translate(-287px,6px)}80%{transform:translate(-348px,30px)}100%{transform:translate(0,0)}}
+@keyframes s11{0%,24%{fill:#58a6ff}24.4%,41.7%{fill:#f85149}42.1%,100%{fill:#3fb950}}
+@keyframes w12{0%{transform:translate(0px,0px)}20%{transform:translate(-305px,-22px)}40%{transform:translate(-63px,-7px)}60%{transform:translate(-42px,23px)}80%{transform:translate(-256px,-38px)}100%{transform:translate(0,0)}}
+@keyframes s12{0%,25.4%{fill:#58a6ff}25.8%,44.1%{fill:#f85149}44.5%,100%{fill:#3fb950}}
+@keyframes w13{0%{transform:translate(0px,0px)}20%{transform:translate(142px,98px)}40%{transform:translate(0px,122px)}60%{transform:translate(328px,37px)}80%{transform:translate(212px,-5px)}100%{transform:translate(0,0)}}
+@keyframes s13{0%,26.9%{fill:#58a6ff}27.3%,46.5%{fill:#f85149}46.9%,100%{fill:#3fb950}}
+@keyframes w14{0%{transform:translate(0px,0px)}20%{transform:translate(-23px,-44px)}40%{transform:translate(281px,-33px)}60%{transform:translate(297px,19px)}80%{transform:translate(169px,70px)}100%{transform:translate(0,0)}}
+@keyframes s14{0%,28.5%{fill:#58a6ff}28.9%,49.1%{fill:#f85149}49.5%,100%{fill:#3fb950}}
+@keyframes w15{0%{transform:translate(0px,0px)}20%{transform:translate(-192px,-38px)}40%{transform:translate(-40px,-78px)}60%{transform:translate(-237px,-117px)}80%{transform:translate(-145px,-32px)}100%{transform:translate(0,0)}}
+@keyframes s15{0%,30.1%{fill:#58a6ff}30.5%,51.9%{fill:#f85149}52.3%,100%{fill:#3fb950}}
+@keyframes w16{0%{transform:translate(0px,0px)}20%{transform:translate(151px,11px)}40%{transform:translate(-97px,53px)}60%{transform:translate(2px,60px)}80%{transform:translate(-90px,74px)}100%{transform:translate(0,0)}}
+@keyframes s16{0%,31.8%{fill:#58a6ff}32.2%,54.9%{fill:#f85149}55.3%,100%{fill:#3fb950}}
+@keyframes w17{0%{transform:translate(0px,0px)}20%{transform:translate(262px,-16px)}40%{transform:translate(117px,49px)}60%{transform:translate(-46px,98px)}80%{transform:translate(-74px,57px)}100%{transform:translate(0,0)}}
+@keyframes s17{0%,33.6%{fill:#58a6ff}34.0%,58.1%{fill:#f85149}58.5%,100%{fill:#3fb950}}
+@keyframes w18{0%{transform:translate(0px,0px)}20%{transform:translate(-261px,66px)}40%{transform:translate(-164px,98px)}60%{transform:translate(-150px,12px)}80%{transform:translate(-151px,114px)}100%{transform:translate(0,0)}}
+@keyframes s18{0%,35.6%{fill:#58a6ff}36.0%,61.8%{fill:#f85149}62.2%,100%{fill:#3fb950}}
+@keyframes w19{0%{transform:translate(0px,0px)}20%{transform:translate(-99px,-93px)}40%{transform:translate(-282px,-67px)}60%{transform:translate(-149px,-123px)}80%{transform:translate(-186px,-50px)}100%{transform:translate(0,0)}}
+@keyframes s19{0%,37.9%{fill:#58a6ff}38.3%,66%{fill:#f85149}66.4%,100%{fill:#3fb950}}
+@keyframes w20{0%{transform:translate(0px,0px)}20%{transform:translate(-137px,81px)}40%{transform:translate(-268px,77px)}60%{transform:translate(-166px,44px)}80%{transform:translate(-103px,158px)}100%{transform:translate(0,0)}}
+@keyframes s20{0%,40.7%{fill:#58a6ff}41.1%,70.9%{fill:#f85149}71.3%,100%{fill:#3fb950}}
+@keyframes w21{0%{transform:translate(0px,0px)}20%{transform:translate(262px,-14px)}40%{transform:translate(219px,-13px)}60%{transform:translate(179px,117px)}80%{transform:translate(394px,-6px)}100%{transform:translate(0,0)}}
+@keyframes s21{0%,44.1%{fill:#58a6ff}44.5%,76.9%{fill:#f85149}77.3%,100%{fill:#3fb950}}
+@keyframes w22{0%{transform:translate(0px,0px)}20%{transform:translate(-121px,23px)}40%{transform:translate(-314px,-1px)}60%{transform:translate(27px,129px)}80%{transform:translate(-84px,69px)}100%{transform:translate(0,0)}}
+@keyframes s22{0%,48.7%{fill:#58a6ff}49.1%,84.6%{fill:#f85149}85.0%,100%{fill:#3fb950}}
+@keyframes w23{0%{transform:translate(0px,0px)}20%{transform:translate(-175px,-2px)}40%{transform:translate(179px,91px)}60%{transform:translate(1px,16px)}80%{transform:translate(-100px,94px)}100%{transform:translate(0,0)}}
+@keyframes s23{0%,55.7%{fill:#58a6ff}56.1%,100%{fill:#f85149}}
+@keyframes w24{0%{transform:translate(0px,0px)}20%{transform:translate(94px,85px)}40%{transform:translate(377px,-6px)}60%{transform:translate(-12px,-34px)}80%{transform:translate(210px,23px)}100%{transform:translate(0,0)}}
+@keyframes s24{0%,70.9%{fill:#58a6ff}71.30000000000001%,100%{fill:#f85149}}
+@keyframes w25{0%{transform:translate(0px,0px)}20%{transform:translate(205px,-4px)}40%{transform:translate(235px,-74px)}60%{transform:translate(223px,-21px)}80%{transform:translate(312px,-44px)}100%{transform:translate(0,0)}}
+@keyframes s25{0%,100%{fill:#58a6ff}}
+@media (prefers-reduced-motion:reduce){
+.a{animation:none!important}
+.c{animation:none!important;stroke-dashoffset:0!important}
+.sweep{animation:none;opacity:0}
+}
+</style>
+<rect x=".5" y=".5" width="839" height="267" rx="10" fill="#0d1117" stroke="#30363d"/>
+<text class="t dim" x="20" y="30">sir-simulation · agent-based · 26 agents</text>
+<circle cx="590" cy="26" r="4" fill="#58a6ff"/><text class="t dim" x="601" y="30">susceptible</text>
+<circle cx="686" cy="26" r="4" fill="#f85149"/><text class="t dim" x="697" y="30">infected</text>
+<circle cx="766" cy="26" r="4" fill="#3fb950"/><text class="t dim" x="777" y="30">recovered</text>
+
+<rect class="pane" x="20.5" y="48.5" width="452" height="200" rx="6"/>
+<g transform="translate(253,86)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w0 30.6s linear -11.0s infinite,s0 14s linear infinite"/></g>
+<g transform="translate(179,184)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w1 28.3s linear -13.2s infinite,s1 14s linear infinite"/></g>
+<g transform="translate(313,164)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w2 35.3s linear -19.8s infinite,s2 14s linear infinite"/></g>
+<g transform="translate(206,187)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w3 29.0s linear -10.6s infinite,s3 14s linear infinite"/></g>
+<g transform="translate(391,116)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w4 24.2s linear -3.6s infinite,s4 14s linear infinite"/></g>
+<g transform="translate(316,165)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w5 32.7s linear -10.9s infinite,s5 14s linear infinite"/></g>
+<g transform="translate(271,103)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w6 32.2s linear -17.0s infinite,s6 14s linear infinite"/></g>
+<g transform="translate(405,205)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w7 37.5s linear -17.0s infinite,s7 14s linear infinite"/></g>
+<g transform="translate(111,149)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w8 28.0s linear -20.0s infinite,s8 14s linear infinite"/></g>
+<g transform="translate(317,166)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w9 33.1s linear -7.4s infinite,s9 14s linear infinite"/></g>
+<g transform="translate(395,219)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w10 29.8s linear -1.3s infinite,s10 14s linear infinite"/></g>
+<g transform="translate(446,76)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w11 36.8s linear -1.9s infinite,s11 14s linear infinite"/></g>
+<g transform="translate(438,182)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w12 23.1s linear -18.7s infinite,s12 14s linear infinite"/></g>
+<g transform="translate(39,70)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w13 22.5s linear -5.8s infinite,s13 14s linear infinite"/></g>
+<g transform="translate(68,154)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w14 32.3s linear -15.2s infinite,s14 14s linear infinite"/></g>
+<g transform="translate(366,225)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w15 35.5s linear -8.5s infinite,s15 14s linear infinite"/></g>
+<g transform="translate(285,64)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w16 24.2s linear -11.2s infinite,s16 14s linear infinite"/></g>
+<g transform="translate(138,106)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w17 31.4s linear -19.4s infinite,s17 14s linear infinite"/></g>
+<g transform="translate(377,106)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w18 28.5s linear -13.6s infinite,s18 14s linear infinite"/></g>
+<g transform="translate(407,206)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w19 23.7s linear -19.5s infinite,s19 14s linear infinite"/></g>
+<g transform="translate(310,70)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w20 27.9s linear -0.4s infinite,s20 14s linear infinite"/></g>
+<g transform="translate(40,91)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w21 31.5s linear -10.0s infinite,s21 14s linear infinite"/></g>
+<g transform="translate(415,68)"><circle class="a" r="4.4" fill="#3fb950" style="animation:w22 33.6s linear -2.3s infinite,s22 14s linear infinite"/></g>
+<g transform="translate(251,115)"><circle class="a" r="4.4" fill="#f85149" style="animation:w23 29.9s linear -16.0s infinite,s23 14s linear infinite"/></g>
+<g transform="translate(56,137)"><circle class="a" r="4.4" fill="#f85149" style="animation:w24 24.1s linear -19.8s infinite,s24 14s linear infinite"/></g>
+<g transform="translate(125,171)"><circle class="a" r="4.4" fill="#58a6ff" style="animation:w25 22.5s linear -7.4s infinite,s25 14s linear infinite"/></g>
+
+<rect class="pane" x="492.5" y="48.5" width="328" height="200" rx="6"/>
+<path class="grid" d="M532 66V222H806"/>
+<path class="grid" d="M532 144H806" stroke-dasharray="2 5"/>
+<text class="t dim" x="524" y="70" text-anchor="end" font-size="9.5">100%</text>
+<text class="t dim" x="524" y="226" text-anchor="end" font-size="9.5">0</text>
+<text class="t dim" x="669" y="240" text-anchor="middle" font-size="9.5">time →</text>
+<path class="c" style="stroke:#58a6ff;stroke-dasharray:331;stroke-dashoffset:331;animation-name:dS" d="M532.0 72.0L540.2 74.9L548.4 78.7L556.7 83.7L564.9 89.8L573.1 97.4L581.3 106.3L589.5 116.3L597.8 127.3L606.0 138.6L614.2 149.7L622.4 160.1L630.6 169.5L638.9 177.7L647.1 184.6L655.3 190.4L663.5 195.1L671.7 199.0L680.0 202.1L688.2 204.6L696.4 206.7L704.6 208.3L712.8 209.7L721.1 210.8L729.3 211.8L737.5 212.5L745.7 213.2L753.9 213.7L762.2 214.2L770.4 214.6L778.6 214.9L786.8 215.2L795.0 215.5L803.3 215.7L806.0 215.8"/>
+<path class="c" style="stroke:#f85149;stroke-dasharray:381;stroke-dashoffset:381;animation-name:dI" d="M532.0 207.2L540.2 202.2L548.4 195.6L556.7 187.3L564.9 177.1L573.1 164.9L581.3 151.0L589.5 136.1L597.8 120.9L606.0 106.8L614.2 94.9L622.4 85.9L630.6 80.4L638.9 78.5L647.1 79.7L655.3 83.5L663.5 89.2L671.7 96.3L680.0 104.3L688.2 112.6L696.4 121.1L704.6 129.4L712.8 137.4L721.1 145.0L729.3 152.1L737.5 158.8L745.7 164.9L753.9 170.5L762.2 175.7L770.4 180.3L778.6 184.6L786.8 188.4L795.0 191.9L803.3 195.0L806.0 196.0"/>
+<path class="c" style="stroke:#3fb950;stroke-dasharray:316;stroke-dashoffset:316;animation-name:dR" d="M532.0 222.0L540.2 221.1L548.4 220.0L556.7 218.4L564.9 216.4L573.1 213.8L581.3 210.6L589.5 206.6L597.8 201.8L606.0 196.3L614.2 190.0L622.4 183.2L630.6 176.0L638.9 168.6L647.1 161.2L655.3 153.9L663.5 146.8L671.7 140.1L680.0 133.8L688.2 127.8L696.4 122.4L704.6 117.3L712.8 112.7L721.1 108.5L729.3 104.6L737.5 101.2L745.7 98.0L753.9 95.2L762.2 92.6L770.4 90.3L778.6 88.3L786.8 86.4L795.0 84.7L803.3 83.3L806.0 82.8"/>
+<line class="sweep" x1="532" y1="66" x2="532" y2="222"/>
+</svg>

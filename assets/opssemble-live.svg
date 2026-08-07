@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" role="img" aria-label="Opssemble runtime topology: coordinators and field staff use web and field interfaces, which call a Fastify API. The API fans out to auth and RBAC, a state engine, and live SSE updates. Auth and the state engine read and write MySQL, while live updates stream back out to the interfaces.">
+  <style>
+    .t     { font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .box   { fill: #161b22; stroke: #30363d; stroke-width: 1; }
+    .lbl   { fill: #e6edf3; font-size: 14px; }
+    .sub   { fill: #8b949e; font-size: 11px; }
+    .dim   { fill: #8b949e; font-size: 11.5px; }
+    .edge  { stroke: #30363d; stroke-width: 1.5; fill: none; }
+    .sse   { stroke: #238636; stroke-width: 1.5; fill: none; stroke-dasharray: 4 5; }
+    .glow  { fill: none; stroke-width: 1.6; opacity: 0; }
+
+    /* request token travels the spine */
+    .req { fill: #58a6ff; animation: req 4s linear infinite; }
+    @keyframes req {
+      0%   { transform: translate(240px, 80px);  opacity: 0; }
+      4%   { transform: translate(240px, 80px);  opacity: 1; }
+      30%  { transform: translate(450px, 152px); opacity: 1; }
+      50%  { transform: translate(450px, 234px); opacity: 1; }
+      72%  { transform: translate(450px, 316px); opacity: 1; }
+      88%  { transform: translate(450px, 394px); opacity: 1; }
+      95%, 100% { transform: translate(450px, 394px); opacity: 0; }
+    }
+    .req2 { fill: #58a6ff; animation: req2 4s linear infinite; }
+    @keyframes req2 {
+      0%, 46%  { transform: translate(450px, 234px); opacity: 0; }
+      50%  { transform: translate(450px, 234px); opacity: 1; }
+      70%  { transform: translate(160px, 316px); opacity: 1; }
+      78%, 100% { transform: translate(160px, 316px); opacity: 0; }
+    }
+
+    /* live updates stream back out to every connected client */
+    .p1 { fill: #3fb950; animation: p1 4s linear infinite; }
+    @keyframes p1 {
+      0%, 60%  { transform: translate(740px, 316px); opacity: 0; }
+      64%  { transform: translate(740px, 316px); opacity: 1; }
+      72%  { transform: translate(862px, 316px); opacity: 1; }
+      84%  { transform: translate(862px, 152px); opacity: 1; }
+      94%, 100% { transform: translate(570px, 152px); opacity: 1; }
+    }
+    /* the outward legs continue the previous cycle's pulse across the loop seam,
+       and follow the real edge geometry instead of cutting over the label */
+    .p2 { fill: #3fb950; animation: p2 4s linear infinite; }
+    @keyframes p2 {
+      0%   { transform: translate(400px, 130px); opacity: 1; }
+      5%   { transform: translate(400px, 116px); opacity: 1; }
+      13%  { transform: translate(240px, 116px); opacity: 1; }
+      17%  { transform: translate(240px, 102px); opacity: 1; }
+      22%, 100% { transform: translate(240px, 102px); opacity: 0; }
+    }
+    .p3 { fill: #3fb950; animation: p3 4s linear infinite; }
+    @keyframes p3 {
+      0%   { transform: translate(500px, 130px); opacity: 1; }
+      5%   { transform: translate(500px, 116px); opacity: 1; }
+      13%  { transform: translate(660px, 116px); opacity: 1; }
+      17%  { transform: translate(660px, 102px); opacity: 1; }
+      22%, 100% { transform: translate(660px, 102px); opacity: 0; }
+    }
+
+    /* nodes light as the request reaches them */
+    .gApi   { stroke: #58a6ff; animation: flash 4s ease-out infinite; animation-delay: -3.98s; }
+    .gRbac  { stroke: #58a6ff; animation: flash 4s ease-out infinite; animation-delay: -3.20s; }
+    .gState { stroke: #58a6ff; animation: flash 4s ease-out infinite; animation-delay: -3.12s; }
+    .gDb    { stroke: #58a6ff; animation: flash 4s ease-out infinite; animation-delay: -2.48s; }
+    @keyframes flash { 0% { opacity: 0; } 6% { opacity: 1; } 30%, 100% { opacity: 0; } }
+    .gLive  { stroke: #3fb950; animation: live 4s ease-in-out infinite; }
+    @keyframes live { 0%, 55%, 100% { opacity: 0; } 66% { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .req, .req2, .p1, .p2, .p3 { animation: none; opacity: 0; }
+      .glow { animation: none; opacity: 0; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="899" height="429" rx="10" fill="#0d1117" stroke="#30363d"/>
+  <text class="t dim" x="24" y="28">opssemble · runtime topology</text>
+  <circle cx="700" cy="24" r="4" fill="#58a6ff"/>
+  <text class="t dim" x="712" y="28">request</text>
+  <circle cx="790" cy="24" r="4" fill="#3fb950"/>
+  <text class="t dim" x="802" y="28">live update</text>
+
+  <!-- edges -->
+  <path class="edge" d="M240 102v14h160v14"/>
+  <path class="edge" d="M660 102v14H500v14"/>
+  <path class="edge" d="M450 174v36"/>
+  <path class="edge" d="M400 258v16H160v18"/>
+  <path class="edge" d="M450 258v34"/>
+  <path class="edge" d="M500 258v16h240v18"/>
+  <path class="edge" d="M160 340v16h240v16"/>
+  <path class="edge" d="M450 340v32"/>
+  <path class="sse" d="M830 316h32V152H570"/>
+  <text class="t" x="856" y="240" fill="#3fb950" font-size="10.5" text-anchor="middle" transform="rotate(90 856 240)">SSE stream</text>
+
+  <!-- clients -->
+  <rect class="box" x="150" y="58" width="180" height="44" rx="8"/>
+  <text class="t lbl" x="240" y="79" text-anchor="middle">coordinators</text>
+  <text class="t sub" x="240" y="94" text-anchor="middle">plan · assign</text>
+
+  <rect class="box" x="570" y="58" width="180" height="44" rx="8"/>
+  <text class="t lbl" x="660" y="79" text-anchor="middle">field staff</text>
+  <text class="t sub" x="660" y="94" text-anchor="middle">scan · report</text>
+
+  <!-- interfaces -->
+  <rect class="box" x="330" y="130" width="240" height="44" rx="8"/>
+  <rect class="glow" x="330" y="130" width="240" height="44" rx="8"/>
+  <text class="t lbl" x="450" y="151" text-anchor="middle">web / field interfaces</text>
+  <text class="t sub" x="450" y="166" text-anchor="middle">PWA · scoped QR capabilities</text>
+
+  <!-- api -->
+  <rect class="box" x="350" y="210" width="200" height="48" rx="8"/>
+  <rect class="glow gApi" x="350" y="210" width="200" height="48" rx="8"/>
+  <text class="t lbl" x="450" y="233" text-anchor="middle">Fastify API</text>
+  <text class="t sub" x="450" y="249" text-anchor="middle">one place to say no</text>
+
+  <!-- branches -->
+  <rect class="box" x="70" y="292" width="180" height="48" rx="8"/>
+  <rect class="glow gRbac" x="70" y="292" width="180" height="48" rx="8"/>
+  <text class="t lbl" x="160" y="315" text-anchor="middle">auth · event RBAC</text>
+  <text class="t sub" x="160" y="331" text-anchor="middle">backend-owned</text>
+
+  <rect class="box" x="360" y="292" width="180" height="48" rx="8"/>
+  <rect class="glow gState" x="360" y="292" width="180" height="48" rx="8"/>
+  <text class="t lbl" x="450" y="315" text-anchor="middle">state engine</text>
+  <text class="t sub" x="450" y="331" text-anchor="middle">readiness · transitions</text>
+
+  <rect class="box" x="650" y="292" width="180" height="48" rx="8"/>
+  <rect class="glow gLive" x="650" y="292" width="180" height="48" rx="8"/>
+  <text class="t lbl" x="740" y="315" text-anchor="middle">live updates</text>
+  <text class="t sub" x="740" y="331" text-anchor="middle">SSE fan-out</text>
+
+  <!-- store -->
+  <rect class="box" x="370" y="372" width="160" height="44" rx="8"/>
+  <rect class="glow gDb" x="370" y="372" width="160" height="44" rx="8"/>
+  <text class="t lbl" x="450" y="393" text-anchor="middle">MySQL</text>
+  <text class="t sub" x="450" y="408" text-anchor="middle">audit history</text>
+
+  <!-- tokens -->
+  <circle class="req"  cx="0" cy="0" r="4.5"/>
+  <circle class="req2" cx="0" cy="0" r="4"/>
+  <circle class="p1" cx="0" cy="0" r="4"/>
+  <circle class="p2" cx="0" cy="0" r="4"/>
+  <circle class="p3" cx="0" cy="0" r="4"/>
+</svg>

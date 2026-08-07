@@ -2,11 +2,7 @@
 
 # Gurmilan Singh
 
-### Software Engineer · Computer Engineering
-
-**I build software that has to survive contact with real users.**
-
-Workflows · state · permissions · relational data · reliability · deployment
+<img src="./assets/console-boot.svg" width="840" alt="Terminal running ./gurmilan --status: location Modena Italy [OK], role Software Engineer [OK], focus operational software [OK], shipping Alfaaz [BUSY], graduating December 2026 [ETA]. I build software that has to survive contact with real users.">
 
 <br>
 
@@ -58,6 +54,54 @@ The interesting work usually starts behind it:
 
 **Who can do what? What state is the system really in? What happens when something fails? Can we explain how it got there?**
 
+<details>
+<summary><code>$ man gurmilan</code></summary>
+
+<br>
+
+```troff
+GURMILAN(1)                  Developer Manual                  GURMILAN(1)
+
+NAME
+       gurmilan — builds software that survives contact with real users
+
+SYNOPSIS
+       gurmilan [--full-stack] [--backend-heavy] [--own-the-deploy]
+                [--ask-about-edge-cases] <problem>
+
+DESCRIPTION
+       Takes a real operational workflow and returns a system whose state
+       is explicit, whose permissions are enforceable server-side, and
+       whose failure paths were designed rather than discovered.
+
+OPTIONS
+       --full-stack
+              Works across UI, API, data and deployment.
+
+       --backend-heavy
+              Default. This is usually where the problem actually lives.
+
+       --own-the-deploy
+              Considers a feature unfinished until it runs somewhere real.
+
+       --ask-about-edge-cases
+              Cannot be disabled.
+
+ENVIRONMENT
+       LOCATION     Modena, Italy
+       LANGUAGES    Italian, Punjabi, English, Hindi
+       AVAILABLE    December 2026
+
+EXIT STATUS
+       0      Shipped.
+       1      Shipped, then found what reality disagreed with. See fix(1).
+
+SEE ALSO
+       gurmilansingh.com
+```
+
+</details>
+
 ---
 
 ## `02` / Flagship
@@ -70,34 +114,22 @@ Event operations software for teams coordinating live work.
 
 Opssemble models an event as **live operational state** instead of a pile of disconnected tasks.
 
-```text
-coordinators ─┐
-              ├──► web / field interfaces
-field staff ──┘            │
-                           ▼
-                     Fastify API
-                    ╱     │      ╲
-                  auth   state    live
-                  RBAC   engine   updates
-                           │
-                           ▼
-                         MySQL
-```
+<img src="./assets/opssemble-live.svg" width="900" alt="Opssemble runtime topology: coordinators and field staff use web and field interfaces, which call a Fastify API. The API fans out to auth and event RBAC, a state engine, and live SSE updates. Auth and the state engine read and write MySQL, while live updates stream back out to the interfaces.">
 
 The parts I care about most:
 
 `event RBAC`
- · 
+ · 
 `readiness modelling`
- · 
+ · 
 `state transitions`
- · 
+ · 
 `SSE`
- · 
+ · 
 `scoped QR capabilities`
- · 
+ · 
 `audit history`
- · 
+ · 
 `PWA`
 
 <p>
@@ -244,6 +276,37 @@ The engineering lessons aren't.
 </tr>
 </table>
 
+<details>
+<summary><code>$ ./sir --start-outbreak</code> &nbsp;&nbsp;<sub>(you were told to)</sub></summary>
+
+<br>
+
+<img src="./assets/sir-sim.svg" width="840" alt="Agent-based SIR epidemic simulation: 26 agents wander a bounded box, turning from susceptible to infected to recovered, alongside the susceptible, infected and recovered curves produced by the same run.">
+
+<sub>26 agents, β = 0.30, γ = 0.085. The curves aren't decorative — the agents change state on the schedule that integration produced. One of them never gets infected. Lucky.</sub>
+
+</details>
+
+<details>
+<summary><code>$ git log --oneline --author="past me"</code></summary>
+
+<br>
+
+```console
+4a91c2e  fix: authorization checks belong on the server, not in the router
+8b30fd1  fix: a state machine, not four booleans that mostly agree
+c17ae44  fix: stop letting the client tell us who it is
+2f0d9b3  fix: soft delete was not a feature, it was a bug with a flag
+9e4c1a8  fix: the background job needed to be idempotent all along
+55b8e07  fix: "we'll add tests later" turned out to be load-bearing
+e02f77a  fix: the migration ran fine locally (it did not run fine)
+```
+
+Every one of these is a thing I now design for up front. That's most of what
+`06 / How I build` actually is — a list of mistakes with the dates filed off.
+
+</details>
+
 ---
 
 ## `04` / Toolbox
@@ -324,9 +387,8 @@ The engineering lessons aren't.
 </tr>
 </table>
 
-<sub>
-Tools change. The things I care about don't: explicit state, clear ownership, enforceable permissions and boringly reliable deployments.
-</sub>
+> [!TIP]
+> Tools change. The things I care about don't: explicit state, clear ownership, enforceable permissions and boringly reliable deployments.
 
 ---
 
@@ -340,16 +402,14 @@ A private multilingual writing system for poetry, shayari, fragments and longer-
 
 Currently working on:
 
-```text
-autosave + conflict handling
-revisions + restore
-fragments + collections
-focus sessions
-transliteration
-voice notes
-local exports
-user-data isolation
-```
+- [ ] autosave + conflict handling
+- [ ] revisions + restore
+- [ ] fragments + collections
+- [ ] focus sessions
+- [ ] transliteration
+- [ ] voice notes
+- [ ] local exports
+- [ ] user-data isolation
 
 Privacy boundaries are intentional.
 
@@ -377,6 +437,8 @@ Exports are generated client-side.
 
 ## `06` / How I build
 
+<img src="./assets/build-pipeline.svg" width="900" alt="Build pipeline: ten stages in order — workflow, state, authz, data, failure, automate, test, deploy, reality, fix — where the last two loop back into each other indefinitely.">
+
 ```text
 01  understand the real workflow
 02  define state and ownership
@@ -390,9 +452,77 @@ Exports are generated client-side.
 10  fix it
 ```
 
+> [!IMPORTANT]
 > **External services and LLMs are tools, not architectural authorities.**
+>
+> When I use them, I prefer bounded inputs, validated outputs, explicit failure modes and human control over consequential actions.
 
-When I use them, I prefer bounded inputs, validated outputs, explicit failure modes and human control over consequential actions.
+---
+
+## `07` / Service level agreement
+
+<table>
+<tr><th align="left">metric</th><th align="left">target</th><th align="left">observed</th></tr>
+<tr><td>uptime</td><td><code>99.9%</code></td><td>degrades near exam season</td></tr>
+<tr><td>response time</td><td><code>&lt; 24h</code></td><td>faster if the problem is interesting</td></tr>
+<tr><td>scheduled maintenance</td><td>Sundays</td><td>Gurdwara first, then code</td></tr>
+<tr><td>known issue</td><td>—</td><td>asks "what happens when this fails?" mid-demo</td></tr>
+<tr><td>rollback plan</td><td>required</td><td>yes, genuinely, always</td></tr>
+</table>
+
+<details>
+<summary><code>$ cat .env</code></summary>
+
+<br>
+
+```console
+cat: .env: No such file or directory
+
+$ cat .env.example
+DATABASE_URL=
+SESSION_SECRET=
+JWT_SECRET=
+# this one is committed. the other one never was.
+# that distinction is most of what `03 / make authorization a
+# backend concern` means in practice.
+```
+
+<details>
+<summary><sub>you kept clicking, so — <code>$ history | tail -5</code></sub></summary>
+
+<br>
+
+```console
+  498  git commit -m "final"
+  499  git commit -m "final (actually)"
+  500  git commit --amend -m "fix: SLA policies are versioned now"
+  501  git push
+  502  ssh prod 'journalctl -u api -f'
+```
+
+</details>
+
+</details>
+
+<details>
+<summary><code>$ ./hire.sh --dry-run</code></summary>
+
+<br>
+
+```console
+▸ availability ......... December 2026            [ OK ]
+▸ location ............. Modena, IT / remote      [ OK ]
+▸ interested in ........ operational software     [ OK ]
+▸ stack ................ full-stack, backend-heavy [ OK ]
+▸ resolving contact .... gurmilans01@gmail.com
+
+dry run complete — no changes made.
+exit 0
+```
+
+To apply for real: **[email](mailto:gurmilans01@gmail.com)** · **[LinkedIn](https://www.linkedin.com/in/gurmilan-singh-017b28284)** · **[gurmilansingh.com](https://gurmilansingh.com)**
+
+</details>
 
 ---
 
@@ -411,5 +541,9 @@ When I use them, I prefer bounded inputs, validated outputs, explicit failure mo
 <br><br>
 
 <sub>Modena, Italy · Software Developer · Computer Engineering</sub>
+
+<br><br>
+
+<sub><code>$ exit 0</code></sub>
 
 </div>
