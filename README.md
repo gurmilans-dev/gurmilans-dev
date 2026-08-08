@@ -28,7 +28,7 @@
 
 # Gurmilan Singh
 
-<img src="./assets/console-boot.svg" width="840" alt="Terminal running ./gurmilan --status: location Modena Italy [OK], role Software Engineer [OK], focus operational software [OK], shipping Alfaaz [BUSY], graduating December 2026 [ETA]. I build software that has to survive contact with real users.">
+<img src="./assets/console-boot.svg" width="840" alt="Terminal running ./gurmilan --status: location Modena Italy [OK], role Software Engineer [OK], working at Phema s.r.l. [OK], focus operational software [OK], shipping Alfaaz [BUSY], graduating December 2026 [ETA]. I build software that has to survive contact with real users.">
 
 <br>
 
@@ -109,7 +109,9 @@ OPTIONS
 ENVIRONMENT
        LOCATION     Modena, Italy
        LANGUAGES    Italian, Punjabi, English, Hindi
-       AVAILABLE    December 2026
+       EMPLOYER     Phema s.r.l.
+       STATUS       not looking — still reading
+       GRADUATING   December 2026
 
 EXIT STATUS
        0      Shipped.
@@ -646,17 +648,19 @@ One of those is not like the others.
 <br>
 
 ```console
-▸ availability ......... December 2026            [ OK ]
-▸ location ............. Modena, IT / remote      [ OK ]
-▸ interested in ........ operational software     [ OK ]
-▸ stack ................ full-stack, backend-heavy [ OK ]
-▸ resolving contact .... gurmilans01@gmail.com
+▸ availability ......... currently at Phema s.r.l.   [ BUSY ]
+▸ open to offers ....... not right now               [ ---- ]
+▸ open to a good problem  always                     [ OK   ]
+▸ location ............. Modena, IT / remote         [ OK   ]
+▸ stack ................ full-stack, backend-heavy   [ OK   ]
+▸ resolving contact .... gurmilans01@gmail.com       [ OK   ]
 
 dry run complete — no changes made.
-exit 0
+exit 75    # EX_TEMPFAIL: try again later
 ```
 
-To apply for real: **[email](mailto:gurmilans01@gmail.com)** · **[LinkedIn](https://www.linkedin.com/in/gurmilan-singh-017b28284)** · **[gurmilansingh.com](https://gurmilansingh.com)**
+Not looking right now. Still always up for a conversation about systems that have
+to survive real users: **[email](mailto:gurmilans01@gmail.com)** · **[LinkedIn](https://www.linkedin.com/in/gurmilan-singh-017b28284)** · **[gurmilansingh.com](https://gurmilansingh.com)**
 
 </details>
 
