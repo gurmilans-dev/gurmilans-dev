@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 348" width="900" height="348" role="img" aria-label="Status page. Overall: partially degraded. Auth and permissions, state machines, rollback plan and responding to quick questions are all operational. Caffeine delivery is degraded. Sleep schedule is a major outage. Shipping services at 99.58 percent over the last 90 days.">
+<style>
+.t{font-family:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,"Liberation Mono",monospace}
+.dim{fill:#8b949e;font-size:12px}
+.nm{fill:#e6edf3;font-size:13px}
+.pill{font-size:11px;text-anchor:middle}
+.sep{stroke:#21262d;stroke-width:1;fill:none}
+.wipe{animation:wipe .55s cubic-bezier(.3,.8,.4,1) both}
+@keyframes wipe{from{transform:translateX(0)}to{transform:translateX(272px)}}
+.pulse{animation:pl 2.2s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:1}50%{opacity:.45}}
+@media (prefers-reduced-motion:reduce){
+.wipe{animation:none;opacity:0}
+.pulse{animation:none;opacity:1}
+}
+</style>
+<defs>
+<pattern id="ok" x="430" y="0" width="4.4667" height="17" patternUnits="userSpaceOnUse">
+<rect width="3.57" height="17" rx="1.2" fill="#3fb950"/>
+</pattern>
+<!-- the wipe covers finish translated past the end of the strip; without this clip they
+     park on top of the status pills and hide them permanently -->
+<clipPath id="strip"><rect x="429" y="120" width="270" height="192"/></clipPath>
+</defs>
+<rect x=".5" y=".5" width="899" height="347" rx="10" fill="#0d1117" stroke="#30363d"/>
+
+<text class="t dim" x="24" y="32">gurmilan.status</text>
+<text class="t dim" x="876" y="32" text-anchor="end">last updated: continuously</text>
+
+<rect x="24" y="48" width="852" height="38" rx="8" fill="#d29922" opacity=".12"/>
+<rect x="24.5" y="48.5" width="851" height="37" rx="8" fill="none" stroke="#d29922" stroke-opacity=".4"/>
+<circle cx="46" cy="67" r="5" fill="#d29922" class="pulse"/>
+<text class="t" x="62" y="72" fill="#d29922" font-size="13.5">Partially degraded</text>
+<text class="t dim" x="214" y="72">— everything that ships is fine; the operator needs sleep</text>
+
+<path class="sep" d="M24 104h852"/>
+<text class="t dim" x="50" y="122" font-size="11">SERVICE</text>
+<text class="t dim" x="430" y="122" font-size="11">LAST 90 DAYS</text>
+<text class="t dim" x="868" y="122" font-size="11" text-anchor="end">STATUS</text>
+
+<g>
+<circle cx="34" cy="136" r="4.5" fill="#3fb950"/>
+<text class="t nm" x="50" y="140">auth &amp; permissions</text>
+<rect x="430" y="127" width="268" height="17" fill="url(#ok)"/>
+
+<rect x="772" y="124" width="96" height="22" rx="11" fill="#3fb950" opacity=".13"/>
+<rect x="772.5" y="124.5" width="95" height="21" rx="10.5" fill="none" stroke="#3fb950" stroke-opacity=".45"/>
+<text class="t pill" x="820" y="139" fill="#3fb950">operational</text>
+</g>
+<g>
+<circle cx="34" cy="168" r="4.5" fill="#3fb950"/>
+<text class="t nm" x="50" y="172">state machines</text>
+<rect x="430" y="159" width="268" height="17" fill="url(#ok)"/>
+
+<rect x="772" y="156" width="96" height="22" rx="11" fill="#3fb950" opacity=".13"/>
+<rect x="772.5" y="156.5" width="95" height="21" rx="10.5" fill="none" stroke="#3fb950" stroke-opacity=".45"/>
+<text class="t pill" x="820" y="171" fill="#3fb950">operational</text>
+</g>
+<g>
+<circle cx="34" cy="200" r="4.5" fill="#3fb950"/>
+<text class="t nm" x="50" y="204">rollback plan</text>
+<rect x="430" y="191" width="268" height="17" fill="url(#ok)"/>
+
+<rect x="772" y="188" width="96" height="22" rx="11" fill="#3fb950" opacity=".13"/>
+<rect x="772.5" y="188.5" width="95" height="21" rx="10.5" fill="none" stroke="#3fb950" stroke-opacity=".45"/>
+<text class="t pill" x="820" y="203" fill="#3fb950">operational</text>
+</g>
+<g>
+<circle cx="34" cy="232" r="4.5" fill="#3fb950"/>
+<text class="t nm" x="50" y="236">responding to &quot;quick question&quot;</text>
+<rect x="430" y="223" width="268" height="17" fill="url(#ok)"/>
+<rect x="653.33" y="223" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="680.13" y="223" width="3.57" height="17" rx="1.2" fill="#d29922"/>
+<rect x="772" y="220" width="96" height="22" rx="11" fill="#3fb950" opacity=".13"/>
+<rect x="772.5" y="220.5" width="95" height="21" rx="10.5" fill="none" stroke="#3fb950" stroke-opacity=".45"/>
+<text class="t pill" x="820" y="235" fill="#3fb950">operational</text>
+</g>
+<g>
+<circle cx="34" cy="264" r="4.5" fill="#d29922" class="pulse"/>
+<text class="t nm" x="50" y="268">caffeine delivery</text>
+<rect x="430" y="255" width="268" height="17" fill="url(#ok)"/>
+<rect x="434.47" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="497.00" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="510.40" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="519.33" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="541.67" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="559.53" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="577.40" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="590.80" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="595.27" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="599.73" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="622.07" y="255" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="626.53" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="644.40" y="255" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="657.80" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="662.27" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="675.67" y="255" width="3.57" height="17" rx="1.2" fill="#d29922"/>
+<rect x="714" y="252" width="154" height="22" rx="11" fill="#d29922" opacity=".13"/>
+<rect x="714.5" y="252.5" width="153" height="21" rx="10.5" fill="none" stroke="#d29922" stroke-opacity=".45"/>
+<text class="t pill" x="791" y="267" fill="#d29922">degraded performance</text>
+</g>
+<g>
+<circle cx="34" cy="296" r="4.5" fill="#f85149" class="pulse"/>
+<text class="t nm" x="50" y="300">sleep schedule</text>
+<rect x="430" y="287" width="268" height="17" fill="url(#ok)"/>
+<rect x="438.93" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="443.40" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="447.87" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="461.27" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="474.67" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="479.13" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="483.60" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="488.07" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="505.93" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="510.40" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="514.87" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="519.33" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="523.80" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="532.73" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="537.20" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="541.67" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="546.13" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="564.00" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="568.47" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="572.93" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="577.40" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="590.80" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="595.27" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="599.73" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="608.67" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="617.60" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="626.53" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="631.00" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="639.93" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="648.87" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="653.33" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="662.27" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="666.73" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="675.67" y="287" width="3.57" height="17" rx="1.2" fill="#d29922"/><rect x="680.13" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="689.07" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/><rect x="693.53" y="287" width="3.57" height="17" rx="1.2" fill="#f85149"/>
+<rect x="760" y="284" width="108" height="22" rx="11" fill="#f85149" opacity=".13"/>
+<rect x="760.5" y="284.5" width="107" height="21" rx="10.5" fill="none" stroke="#f85149" stroke-opacity=".45"/>
+<text class="t pill" x="814" y="299" fill="#f85149">major outage</text>
+</g>
+<g clip-path="url(#strip)">
+<rect class="wipe" style="animation-delay:0.15s" x="429" y="126" width="270" height="19" fill="#0d1117"/>
+<rect class="wipe" style="animation-delay:0.24s" x="429" y="158" width="270" height="19" fill="#0d1117"/>
+<rect class="wipe" style="animation-delay:0.33s" x="429" y="190" width="270" height="19" fill="#0d1117"/>
+<rect class="wipe" style="animation-delay:0.42s" x="429" y="222" width="270" height="19" fill="#0d1117"/>
+<rect class="wipe" style="animation-delay:0.51s" x="429" y="254" width="270" height="19" fill="#0d1117"/>
+<rect class="wipe" style="animation-delay:0.60s" x="429" y="286" width="270" height="19" fill="#0d1117"/>
+</g>
+
+<path class="sep" d="M24 314h852"/>
+<text class="t dim" x="24" y="334">shipping services: <tspan fill="#3fb950">99.58%</tspan> over the last 90 days</text>
+<text class="t dim" x="876" y="334" text-anchor="end">the rest was exam season</text>
+</svg>

@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 404" width="900" height="404" role="img" aria-label="An htop-style process monitor listing the tools I spend time in: javascript, node, react, csharp, dotnet, fastify, mysql, sqlserver, java and docker, with a %TIME column rather than a skill score. Docker is stuck in uninterruptible sleep. Tasks: 5 running, 2 blocked on code review.">
+  <style>
+    .t    { font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .dim  { fill: #8b949e; font-size: 12.5px; }
+    .txt  { fill: #c9d1d9; font-size: 12.5px; }
+    .hi   { fill: #e6edf3; font-size: 13.5px; }
+    .grn  { fill: #3fb950; }
+    .amb  { fill: #d29922; }
+    .blu  { fill: #58a6ff; }
+    .red  { fill: #f85149; }
+    .sep  { stroke: #21262d; stroke-width: 1; fill: none; }
+    .track{ fill: #161b22; }
+    .hdr  { fill: #1f6feb; }
+
+    /* bars grow from the left; every bar shares the same origin */
+    .bar  { transform-origin: 620px 0; animation: grow 0.5s cubic-bezier(.2,.7,.3,1) both; }
+    .mtr  { transform-origin: 64px 0;  animation: grow 0.6s cubic-bezier(.2,.7,.3,1) both; }
+    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    .blink { animation: bl 1.06s steps(1, end) 1.6s infinite; }
+    @keyframes bl { 50% { opacity: 0; } }
+    .stuck { animation: stuck 2.6s ease-in-out 1.2s infinite; }
+    @keyframes stuck { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .bar, .mtr { animation: none; transform: none; }
+      .blink, .stuck { animation: none; opacity: 1; }
+    }
+  </style>
+
+  <rect x="0.5" y="0.5" width="899" height="403" rx="10" fill="#0d1117" stroke="#30363d"/>
+
+  <text class="t hi" x="24" y="34"><tspan class="grn">$</tspan><tspan dx="8">htop --user=gurmilan</tspan></text>
+
+  <!-- meters: value sits OUTSIDE the bracket so a long readout can't run under its own bar -->
+  <text class="t dim" x="24" y="66" font-size="12">1</text>
+  <text class="t dim" x="48" y="66" font-size="12">[</text>
+  <rect class="track" x="64" y="58" width="186" height="10" rx="2"/>
+  <rect class="mtr" style="animation-delay:.05s" x="64" y="58" width="84" height="10" rx="2" fill="#3fb950"/>
+  <text class="t dim" x="256" y="66" font-size="12">]</text>
+  <text class="t grn" x="270" y="66" font-size="12">45.2%</text>
+
+  <text class="t dim" x="24" y="88" font-size="12">2</text>
+  <text class="t dim" x="48" y="88" font-size="12">[</text>
+  <rect class="track" x="64" y="80" width="186" height="10" rx="2"/>
+  <rect class="mtr" style="animation-delay:.12s" x="64" y="80" width="52" height="10" rx="2" fill="#3fb950"/>
+  <text class="t dim" x="256" y="88" font-size="12">]</text>
+  <text class="t grn" x="270" y="88" font-size="12">28.1%</text>
+
+  <text class="t dim" x="24" y="110" font-size="12">Mem</text>
+  <text class="t dim" x="48" y="110" font-size="12">[</text>
+  <rect class="track" x="64" y="102" width="186" height="10" rx="2"/>
+  <rect class="mtr" style="animation-delay:.19s" x="64" y="102" width="141" height="10" rx="2" fill="#d29922"/>
+  <text class="t dim" x="256" y="110" font-size="12">]</text>
+  <text class="t amb" x="270" y="110" font-size="12">6.1G/8.0G</text>
+
+  <!-- right-hand readout -->
+  <text class="t dim" x="400" y="66"  font-size="12.5">Tasks: <tspan class="txt">5 running</tspan>, <tspan class="amb">2 blocked on code review</tspan></text>
+  <text class="t dim" x="400" y="88"  font-size="12.5">Load average: <tspan class="txt">3.20  1.85  0.94</tspan></text>
+  <text class="t dim" x="400" y="110" font-size="12.5">Uptime: <tspan class="txt">since the first "it works on my machine"</tspan></text>
+
+  <path class="sep" d="M24 126h852"/>
+
+  <!-- column header -->
+  <rect class="hdr" x="24" y="136" width="852" height="20" rx="3"/>
+  <text class="t" x="94"  y="150" font-size="12" fill="#e6edf3" text-anchor="end">PID</text>
+  <text class="t" x="110" y="150" font-size="12" fill="#e6edf3">USER</text>
+  <text class="t" x="252" y="150" font-size="12" fill="#e6edf3" text-anchor="end">%TIME</text>
+  <text class="t" x="268" y="150" font-size="12" fill="#e6edf3">S</text>
+  <text class="t" x="292" y="150" font-size="12" fill="#e6edf3">COMMAND</text>
+
+  <g class="t" font-size="12.5">
+    <!-- row 1 -->
+    <text class="dim" x="94" y="180" text-anchor="end">1337</text><text class="dim" x="110" y="180">gurmilan</text>
+    <text class="blu" x="252" y="180" text-anchor="end">82.4</text><text class="grn" x="268" y="180">R</text>
+    <text class="txt" x="292" y="180">javascript</text>
+    <rect class="track" x="620" y="171" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.26s" x="620" y="171" width="198" height="9" rx="2" fill="#58a6ff"/>
+
+    <text class="dim" x="94" y="200" text-anchor="end">2048</text><text class="dim" x="110" y="200">gurmilan</text>
+    <text class="blu" x="252" y="200" text-anchor="end">74.6</text><text class="grn" x="268" y="200">R</text>
+    <text class="txt" x="292" y="200">nodejs</text>
+    <rect class="track" x="620" y="191" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.31s" x="620" y="191" width="179" height="9" rx="2" fill="#58a6ff"/>
+
+    <text class="dim" x="94" y="220" text-anchor="end">4096</text><text class="dim" x="110" y="220">gurmilan</text>
+    <text class="blu" x="252" y="220" text-anchor="end">71.0</text><text class="grn" x="268" y="220">R</text>
+    <text class="txt" x="292" y="220">csharp</text>
+    <rect class="track" x="620" y="211" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.36s" x="620" y="211" width="170" height="9" rx="2" fill="#58a6ff"/>
+
+    <text class="dim" x="94" y="240" text-anchor="end">1024</text><text class="dim" x="110" y="240">gurmilan</text>
+    <text class="blu" x="252" y="240" text-anchor="end">68.9</text><text class="grn" x="268" y="240">R</text>
+    <text class="txt" x="292" y="240">react</text>
+    <rect class="track" x="620" y="231" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.41s" x="620" y="231" width="165" height="9" rx="2" fill="#58a6ff"/>
+
+    <text class="dim" x="94" y="260" text-anchor="end">8192</text><text class="dim" x="110" y="260">gurmilan</text>
+    <text class="blu" x="252" y="260" text-anchor="end">66.8</text><text class="grn" x="268" y="260">R</text>
+    <text class="txt" x="292" y="260">dotnet</text>
+    <rect class="track" x="620" y="251" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.46s" x="620" y="251" width="160" height="9" rx="2" fill="#58a6ff"/>
+
+    <text class="dim" x="94" y="280" text-anchor="end">3141</text><text class="dim" x="110" y="280">gurmilan</text>
+    <text class="blu" x="252" y="280" text-anchor="end">61.3</text><text class="grn" x="268" y="280">R</text>
+    <text class="txt" x="292" y="280">fastify</text>
+    <rect class="track" x="620" y="271" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.51s" x="620" y="271" width="147" height="9" rx="2" fill="#58a6ff"/>
+
+    <text class="dim" x="94" y="300" text-anchor="end">5432</text><text class="dim" x="110" y="300">gurmilan</text>
+    <text class="blu" x="252" y="300" text-anchor="end">58.1</text><text class="grn" x="268" y="300">R</text>
+    <text class="txt" x="292" y="300">mysql</text>
+    <rect class="track" x="620" y="291" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.56s" x="620" y="291" width="139" height="9" rx="2" fill="#58a6ff"/>
+
+    <text class="dim" x="94" y="320" text-anchor="end">1433</text><text class="dim" x="110" y="320">gurmilan</text>
+    <text class="dim" x="252" y="320" text-anchor="end">49.7</text><text class="dim" x="268" y="320">S</text>
+    <text class="txt" x="292" y="320">sqlserver</text>
+    <rect class="track" x="620" y="311" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.61s" x="620" y="311" width="119" height="9" rx="2" fill="#6e7681"/>
+
+    <text class="dim" x="94" y="340" text-anchor="end">8080</text><text class="dim" x="110" y="340">gurmilan</text>
+    <text class="dim" x="252" y="340" text-anchor="end">34.2</text><text class="dim" x="268" y="340">S</text>
+    <text class="txt" x="292" y="340">java</text>
+    <rect class="track" x="620" y="331" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.66s" x="620" y="331" width="82" height="9" rx="2" fill="#6e7681"/>
+
+    <!-- the one that never comes back -->
+    <text class="dim" x="94" y="360" text-anchor="end">2375</text><text class="dim" x="110" y="360">gurmilan</text>
+    <text class="amb" x="252" y="360" text-anchor="end">22.5</text><text class="amb stuck" x="268" y="360">D</text>
+    <text class="txt" x="292" y="360">docker <tspan class="dim" font-size="11.5">— uninterruptible sleep since Tuesday</tspan></text>
+    <rect class="track" x="620" y="351" width="240" height="9" rx="2"/>
+    <rect class="bar" style="animation-delay:.71s" x="620" y="351" width="54" height="9" rx="2" fill="#d29922"/>
+  </g>
+
+  <!-- function bar -->
+  <g class="t" font-size="11.5">
+    <text class="dim" x="24"  y="386">F1<tspan fill="#e6edf3" dx="4">Help</tspan></text>
+    <text class="dim" x="106" y="386">F2<tspan fill="#e6edf3" dx="4">Setup</tspan></text>
+    <text class="dim" x="196" y="386">F3<tspan fill="#e6edf3" dx="4">Search</tspan></text>
+    <text class="dim" x="296" y="386">F6<tspan fill="#e6edf3" dx="4">SortBy</tspan></text>
+    <text class="dim" x="396" y="386">F9<tspan fill="#f85149" dx="4">Kill</tspan><tspan class="dim" dx="6">scope-creep</tspan></text>
+    <text class="dim" x="560" y="386">F10<tspan fill="#e6edf3" dx="4">Quit</tspan><tspan class="dim" dx="6">(never)</tspan></text>
+  </g>
+  <rect class="blink" x="852" y="376" width="8" height="14" fill="#3fb950"/>
+</svg>

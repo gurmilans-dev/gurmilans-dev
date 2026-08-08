@@ -1,3 +1,29 @@
+<!--
+
+  ╭──────────────────────────────────────────────────────────────╮
+  │   you opened the raw file. of course you did.                │
+  ╰──────────────────────────────────────────────────────────────╯
+
+  Everything that moves on this page is a hand written SVG in ./assets.
+  No badge services, no scheduled jobs, no third party anything. Nothing
+  here can go stale while I am not looking at it.
+
+  The epidemic simulation is not a loop of random dots. It is generated
+  from a real SIR integration, and each agent changes state on the exact
+  schedule that integration produced. One of them never gets infected.
+  See tools/gen-sir-sim.mjs if you want to change the parameters.
+
+  How any of it animates at all, given GitHub's sanitiser: CSS keyframes
+  inside an .svg loaded through an img tag still run. Scripts do not, and
+  pointer events never arrive, so there is no hover, ever. Working inside
+  that constraint is most of what made this fun to build.
+
+  There are four drawers nested inside one another somewhere below. The
+  bottom one is not a joke.
+
+                                                  gurmilansingh.com
+-->
+
 <div align="center">
 
 # Gurmilan Singh
@@ -137,6 +163,35 @@ The parts I care about most:
   <img src="./assets/mysql.svg" width="28" height="28" alt="MySQL" title="MySQL">
 </p>
 
+<details>
+<summary>What "operational readiness" actually looks like at 02:14</summary>
+
+<br>
+
+```log
+02:14:07  scan     gate-B · steward #41 · qr:cap=checkin,scope=gate-B    → accepted
+02:14:07  state    gate-B  staffed(3/4) → staffed(4/4)                   → ready
+02:14:09  sse      fan-out to 12 subscribers                             → 12 ok
+02:16:33  report   gate-D · "generator making a noise"        severity:2
+02:16:33  state    gate-D  ready → degraded                              → escalated
+02:16:34  sse      fan-out to 12 subscribers                             → 12 ok
+02:17:02  action   steward #41 → reassign(gate-D)
+02:17:02  authz    DENY  role=steward lacks reassign:crew on gate-D
+02:17:02  audit    denial recorded · actor #41 · reason=missing_capability
+02:17:48  action   coordinator #7 → reassign(gate-D, crew=2)
+02:17:48  authz    ALLOW role=coordinator scope=event:114
+02:17:49  state    gate-D  degraded → ready                              → resolved
+02:17:49  audit    114 entries · reconstructable
+```
+
+Nobody had to ask "who is at gate D right now?" in a WhatsApp group.
+
+The denial at 02:17:02 is the part I care about most. A steward tried something
+reasonable, the backend said no, and the reason was written down. That's not an
+error path bolted on afterwards — it's the same code path as the success.
+
+</details>
+
 **[Explore the Opssemble case study →](https://gurmilansingh.com/opssemble)**
 
 ---
@@ -270,6 +325,36 @@ The engineering lessons aren't.
 </table>
 
 <details>
+<summary>All of it, as a directory listing</summary>
+
+<br>
+
+```console
+$ tree ~/projects -L 2 --du -h
+
+/home/gurmilan/projects
+├── opssemble/              [ 4.2M ]  drwxr-xr-x   flagship
+│   ├── api/                          fastify · rbac · sse
+│   ├── web/                          react · vite · pwa
+│   └── docs/readiness-model.md
+├── maintops/               [ 3.1M ]  drwxr-xr-x   public
+│   ├── workers/                      background jobs, idempotent
+│   └── policies/sla.versioned.sql
+├── gurmat-saanj/           [ 2.4M ]  drwxr-xr-x   running in one Gurdwara
+│   └── sync/                         the hard half
+├── alfaaz/                 [ 1.8M ]  drwx------   private
+│   └── .gitignore                    (load-bearing)
+├── sir-simulation/         [ 890K ]  drwxr-xr-x   java · javafx
+│   └── engine/                       decoupled from rendering, on purpose
+└── confidential/           [   ?  ]  d---------   nice try
+    └── permission denied
+
+6 directories, one of which you are not getting into
+```
+
+</details>
+
+<details>
 <summary><code>$ ./sir --start-outbreak</code> &nbsp;&nbsp;<sub>(you were told to)</sub></summary>
 
 <br>
@@ -303,6 +388,12 @@ Every one of these is a thing I now design for up front. That's most of what
 ---
 
 ## `04` / Toolbox
+
+<img src="./assets/toolbox-htop.svg" width="900" alt="An htop-style process monitor listing the tools I spend time in — javascript, nodejs, csharp, react, dotnet, fastify, mysql, sqlserver, java and docker — with a %TIME column rather than a skill score. Docker is stuck in uninterruptible sleep. Tasks: 5 running, 2 blocked on code review.">
+
+<sub>`%TIME`, not `%CPU` — this is where the hours go, not a self-assessed skill score.</sub>
+
+<br>
 
 <table>
 <tr>
@@ -393,7 +484,7 @@ Every one of these is a thing I now design for up front. That's most of what
 
 A private multilingual writing system for poetry, shayari, fragments and longer-form work across English, Hindi and Punjabi.
 
-Currently working on:
+Currently open on the workbench — none of these are finished, which is the point:
 
 - [ ] autosave + conflict handling
 - [ ] revisions + restore
@@ -403,6 +494,27 @@ Currently working on:
 - [ ] voice notes
 - [ ] local exports
 - [ ] user-data isolation
+
+<details>
+<summary>What it looks like with something actually in it</summary>
+
+<br>
+
+<!-- Gurmilan: swap this for one of your own fragments — this is a placeholder line,
+     picked because it echoes the tagline above. The point is the three-script view. -->
+
+<table>
+<tr><td width="60"><sub><code>en</code></sub></td><td>some words are not ready yet</td></tr>
+<tr><td><sub><code>hi</code></sub></td><td>कुछ शब्द अभी तैयार नहीं हैं</td></tr>
+<tr><td><sub><code>pa</code></sub></td><td>ਕੁਝ ਸ਼ਬਦ ਅਜੇ ਤਿਆਰ ਨਹੀਂ ਹਨ</td></tr>
+</table>
+
+<sub>`untitled fragment` · `3 scripts` · `unsaved` · `never leaves the browser until you say so`</sub>
+
+The whole app exists because that state — not ready yet — needed somewhere to live
+that wasn't a notes app, a Google Doc, or the back of a receipt.
+
+</details>
 
 Privacy boundaries are intentional.
 
@@ -452,15 +564,14 @@ Exports are generated client-side.
 
 ---
 
-## `07` / Service level agreement
+## `07` / Status
+
+<img src="./assets/status-page.svg" width="900" alt="Status page. Overall: partially degraded. Auth and permissions, state machines, rollback plan and responding to quick questions are all operational. Caffeine delivery is degraded. Sleep schedule is a major outage. Shipping services at 99.58 percent over the last 90 days.">
 
 <table>
-<tr><th align="left">metric</th><th align="left">target</th><th align="left">observed</th></tr>
-<tr><td>uptime</td><td><code>99.9%</code></td><td>degrades near exam season</td></tr>
-<tr><td>response time</td><td><code>&lt; 24h</code></td><td>faster if the problem is interesting</td></tr>
-<tr><td>scheduled maintenance</td><td>Sundays</td><td>Gurdwara first, then code</td></tr>
-<tr><td>known issue</td><td>—</td><td>asks "what happens when this fails?" mid-demo</td></tr>
-<tr><td>rollback plan</td><td>required</td><td>yes, genuinely, always</td></tr>
+<tr><td width="220"><sub>scheduled maintenance</sub></td><td><sub>Sundays — Gurdwara first, then code</sub></td></tr>
+<tr><td><sub>response time</sub></td><td><sub>under 24h, faster if the problem is interesting</sub></td></tr>
+<tr><td><sub>known issue</sub></td><td><sub>asks "what happens when this fails?" mid-demo</sub></td></tr>
 </table>
 
 <details>
@@ -492,6 +603,38 @@ JWT_SECRET=
   501  git push
   502  ssh prod 'journalctl -u api -f'
 ```
+
+<details>
+<summary><sub>still here? — <code>$ ls -la</code></sub></summary>
+
+<br>
+
+```console
+total 48
+drwxr-xr-x  gurmilan  4.0K  .
+drwxr-xr-x  gurmilan  4.0K  ..
+-rw-r--r--  gurmilan   214  .env.example
+-rw-r--r--  gurmilan  1.2K  README.md
+-rw-------  gurmilan    97  .secret
+```
+
+One of those is not like the others.
+
+<details>
+<summary><sub><code>$ cat .secret</code></sub></summary>
+
+<br>
+
+> If you read this far, you are the kind of person who reads the whole config
+> before changing one line, and checks what the flag actually does before setting it.
+>
+> That is most of the job. We would probably get on.
+>
+> **[gurmilans01@gmail.com](mailto:gurmilans01@gmail.com)**
+
+</details>
+
+</details>
 
 </details>
 
