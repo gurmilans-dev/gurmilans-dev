@@ -36,11 +36,11 @@
      between the image and the closing tag collapses into a real space that sits inside
      the link, and GitHub draws its link underline through that space, which shows up as
      a stray dash beside the icon. -->
-<a href="https://gurmilansingh.com"><strong>gurmilansingh.com</strong></a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/gurmilan-singh-017b28284"><img src="./assets/linkedin.svg" width="22" height="22" alt="LinkedIn"></a>
+<a href="https://gurmilansingh.com"><img src="./assets/globe.svg" width="22" height="22" alt="Website — gurmilansingh.com" title="gurmilansingh.com"></a>
 &nbsp;&nbsp;&nbsp;
-<a href="mailto:gurmilans01@gmail.com"><img src="./assets/mail.svg" width="22" height="22" alt="Email"></a>
+<a href="https://www.linkedin.com/in/gurmilan-singh-017b28284"><img src="./assets/linkedin.svg" width="22" height="22" alt="LinkedIn" title="LinkedIn"></a>
+&nbsp;&nbsp;&nbsp;
+<a href="mailto:gurmilans01@gmail.com"><img src="./assets/mail.svg" width="22" height="22" alt="Email" title="gurmilans01@gmail.com"></a>
 
 </div>
 
