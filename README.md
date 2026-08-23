@@ -401,7 +401,7 @@ Every one of these is a thing I now design for up front. That's most of what
 
 ## `04` / Toolbox
 
-<img src="./assets/toolbox-htop.svg" width="900" alt="An htop-style process monitor listing the tools I spend time in — javascript, nodejs, csharp, react, dotnet, fastify, mysql, sqlserver, java and docker — with a %TIME column rather than a skill score. Docker is stuck in uninterruptible sleep. Tasks: 5 running, 2 blocked on code review.">
+<img src="./assets/toolbox-htop.svg" width="900" alt="An htop-style process monitor listing the tools I spend time in — javascript, typescript, nodejs, csharp, react, dotnet, fastify, mysql, sqlserver, java and docker — with a %TIME column rather than a skill score. Docker is stuck in uninterruptible sleep. Tasks: 5 running, 2 blocked on code review.">
 
 <sub>`%TIME`, not `%CPU` — this is where the hours go, not a self-assessed skill score.</sub>
 
@@ -412,6 +412,11 @@ Every one of these is a thing I now design for up front. That's most of what
 <td align="center" width="90">
 <img src="./assets/javascript.svg" width="38" height="38" alt="JavaScript"><br>
 <sub>JavaScript</sub>
+</td>
+
+<td align="center" width="90">
+<img src="./assets/typescript.svg" width="38" height="38" alt="TypeScript"><br>
+<sub>TypeScript</sub>
 </td>
 
 <td align="center" width="90">
