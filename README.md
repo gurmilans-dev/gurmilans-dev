@@ -320,6 +320,20 @@ The engineering lessons aren't.
 
 </td>
 </tr>
+
+<tr>
+<td colspan="2" valign="top">
+
+### Esamarea
+
+One weekly availability budget, split across every active exam. The session timer is rebuilt from server timestamps, so a refresh, a backgrounded tab or an API restart never change the time you logged.
+
+`deterministic planning` · `server-owned timers` · `TypeScript` · `unit · API · UI · E2E`
+
+<img src="./assets/react.svg" width="22" height="22" alt="React">&nbsp;<img src="./assets/vite.svg" width="22" height="22" alt="Vite">&nbsp;<img src="./assets/express.svg" width="22" height="22" alt="Express">&nbsp;<img src="./assets/mysql.svg" width="22" height="22" alt="MySQL">&nbsp;<img src="./assets/playwright.svg" width="22" height="22" alt="Playwright">&nbsp;&nbsp;&nbsp;**[Read the code →](https://github.com/gurmilans-dev/esamarea)**
+
+</td>
+</tr>
 </table>
 
 <details>
